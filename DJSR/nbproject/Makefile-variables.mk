@@ -22,6 +22,14 @@ CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/djsr
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
 CND_PACKAGE_NAME_Release=djsr.tar
 CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/djsr.tar
+# Copy_of_Debug configuration
+CND_PLATFORM_Copy_of_Debug=GNU-Linux
+CND_ARTIFACT_DIR_Copy_of_Debug=dist/Copy_of_Debug/GNU-Linux
+CND_ARTIFACT_NAME_Copy_of_Debug=djsr
+CND_ARTIFACT_PATH_Copy_of_Debug=dist/Copy_of_Debug/GNU-Linux/djsr
+CND_PACKAGE_DIR_Copy_of_Debug=dist/Copy_of_Debug/GNU-Linux/package
+CND_PACKAGE_NAME_Copy_of_Debug=djsr.tar
+CND_PACKAGE_PATH_Copy_of_Debug=dist/Copy_of_Debug/GNU-Linux/package/djsr.tar
 #
 # include compiler specific variables
 #
