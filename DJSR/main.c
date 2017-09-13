@@ -12,14 +12,9 @@
  */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h>                     
 #include <gtk/gtk.h>
 
-/* 
- * simple gtk application 
- * author jan bodnar
- * date february 17, 2008
- */
 
 int main(int argc, char** argv) {
 
@@ -29,11 +24,10 @@ int main(int argc, char** argv) {
     window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
     gtk_window_set_default_size(GTK_WINDOW(window), 200, 100);
-    gtk_window_set_title(GTK_WINDOW(window), "gtkapp");
+    gtk_window_set_title(GTK_WINDOW(window), "TEST 123");
     gtk_widget_show(window);
 
-    g_signal_connect(window, "destroy",
-		    G_CALLBACK (gtk_main_quit), NULL);
+    g_signal_connect(window, "destroy",  G_CALLBACK (gtk_main_quit), NULL);
  
     gtk_main();
 
