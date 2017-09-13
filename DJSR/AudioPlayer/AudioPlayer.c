@@ -96,8 +96,7 @@ int playAudioTest(char *file) {
         
     printf("File: %s\n", file);
     
-    
-    
+  
     struct SoundConfig * soundCfg = setupAudio();
 
     
@@ -123,5 +122,5 @@ int playAudioTest(char *file) {
 //    snd_pcm_close(pcm_handle);
 //    free(buff);
     
-    return 0;
+//    return 0;
 }

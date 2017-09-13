@@ -66,7 +66,7 @@
           </incDir>
         </cTool>
         <linkerTool>
-          <commandLine>-lgtk-3 -lgdk-3 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lsndfile -llasound2</commandLine>
+          <commandLine>-lgtk-3 -lgdk-3 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lsndfile -lasound</commandLine>
         </linkerTool>
       </compileType>
       <item path="AudioPlayer/AudioPlayer.c" ex="false" tool="0" flavor2="0">
