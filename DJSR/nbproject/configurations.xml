@@ -4,7 +4,11 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>APlay/APlay.h</itemPath>
       <itemPath>AudioPlayer/AudioPlayer.h</itemPath>
+      <itemPath>APlay/aconfig.h</itemPath>
+      <itemPath>APlay/formats.h</itemPath>
+      <itemPath>APlay/gettext.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -13,6 +17,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>APlay/APlay.c</itemPath>
       <itemPath>AudioPlayer/AudioPlayer.c</itemPath>
       <itemPath>main.c</itemPath>
     </logicalFolder>
@@ -69,6 +74,16 @@
           <commandLine>-lgtk-3 -lgdk-3 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lsndfile -lasound</commandLine>
         </linkerTool>
       </compileType>
+      <item path="APlay/APlay.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="APlay/APlay.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="APlay/aconfig.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="APlay/formats.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="APlay/gettext.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="AudioPlayer/AudioPlayer.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="AudioPlayer/AudioPlayer.h" ex="false" tool="3" flavor2="0">
@@ -96,6 +111,16 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="APlay/APlay.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="APlay/APlay.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="APlay/aconfig.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="APlay/formats.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="APlay/gettext.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="AudioPlayer/AudioPlayer.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="AudioPlayer/AudioPlayer.h" ex="false" tool="3" flavor2="0">
@@ -142,6 +167,16 @@
           <commandLine>-lgtk-3 -lgdk-3 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lsndfile -llasound2</commandLine>
         </linkerTool>
       </compileType>
+      <item path="APlay/APlay.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="APlay/APlay.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="APlay/aconfig.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="APlay/formats.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="APlay/gettext.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="AudioPlayer/AudioPlayer.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="AudioPlayer/AudioPlayer.h" ex="false" tool="3" flavor2="0">

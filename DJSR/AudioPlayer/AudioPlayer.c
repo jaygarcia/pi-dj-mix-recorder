@@ -70,8 +70,7 @@ void playAudioTest(char * fileName) {
     return;
 } /* alsa_play */
 
-static snd_pcm_t *
-alsa_open(int channels, unsigned samplerate, int realtime) {
+static snd_pcm_t * alsa_open(int channels, unsigned samplerate, int realtime) {
     const char * device = "default";
     snd_pcm_t *alsa_dev = NULL;
     snd_pcm_hw_params_t *hw_params;
@@ -189,8 +188,7 @@ catch_error:
     return alsa_dev;
 } /* alsa_open */
 
-static int
-alsa_write_float(snd_pcm_t *alsa_dev, float *data, int frames, int channels) {
+static int alsa_write_float(snd_pcm_t *alsa_dev, float *data, int frames, int channels) {
     static int epipe_count = 0;
 
     int total = 0;

@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/APlay/APlay.o \
 	${OBJECTDIR}/AudioPlayer/AudioPlayer.o \
 	${OBJECTDIR}/main.o
 
@@ -62,6 +63,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/djsr: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/djsr ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/APlay/APlay.o: APlay/APlay.c
+	${MKDIR} -p ${OBJECTDIR}/APlay
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/APlay/APlay.o APlay/APlay.c
 
 ${OBJECTDIR}/AudioPlayer/AudioPlayer.o: AudioPlayer/AudioPlayer.c
 	${MKDIR} -p ${OBJECTDIR}/AudioPlayer
