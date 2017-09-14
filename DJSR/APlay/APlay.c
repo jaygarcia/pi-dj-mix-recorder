@@ -27,7 +27,6 @@
 
 
 /*
- * Most of this work is source from Jaroslav Kysela's work for aplay.c (ALSA lib player utility)
  *  
  *  aplay.c - plays and records
  *

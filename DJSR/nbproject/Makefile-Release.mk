@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/APlay/APlay.o \
 	${OBJECTDIR}/AudioPlayer/AudioPlayer.o \
+	${OBJECTDIR}/app/app.o \
 	${OBJECTDIR}/main.o
 
 
@@ -73,6 +74,11 @@ ${OBJECTDIR}/AudioPlayer/AudioPlayer.o: AudioPlayer/AudioPlayer.c
 	${MKDIR} -p ${OBJECTDIR}/AudioPlayer
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AudioPlayer/AudioPlayer.o AudioPlayer/AudioPlayer.c
+
+${OBJECTDIR}/app/app.o: app/app.c
+	${MKDIR} -p ${OBJECTDIR}/app
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/app/app.o app/app.c
 
 ${OBJECTDIR}/main.o: main.c
 	${MKDIR} -p ${OBJECTDIR}
