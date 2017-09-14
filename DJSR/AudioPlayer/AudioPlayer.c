@@ -1,126 +1,272 @@
 #include "AudioPlayer.h"
 
-#define PCM_DEVICE "default"
+/* Mostly copied from https://github.com/erikd/libsndfile/blob/master/programs/sndfile-play.c */
 
-//Based off of https://gist.github.com/ghedo/963382
+#define SIGNED_SIZEOF(x) ((int) sizeof (x))
+#define BUFFER_LEN   (2048)
 
-struct SoundConfig {
-    snd_pcm_t *pcm_handle;
-    snd_pcm_hw_params_t *params;
-    snd_pcm_uframes_t frames;
 
-    int rate;
-    int channels;
-    int buff_size;
-    char *buffer;
-} SoundConfig;
 
-// Configure ALSA audio
-struct SoundConfig * setupAudio() {
-    struct SoundConfig config;
- 
-    config.rate = 44100;
-    config.channels = 2;
-    unsigned int pcm, tmpVar, dir;
+static snd_pcm_t * alsa_open(int channels, unsigned srate, int realtime);
+static int alsa_write_float(snd_pcm_t *alsa_dev, float *data, int frames, int channels);
 
-    int rate     = 44100,
-        channels = 2,
-        seconds  = 30;
+void playAudioTest(char * fileName) {
+    static float buffer[BUFFER_LEN];
+    SNDFILE *sndfile;
+    SF_INFO sfinfo;
+    snd_pcm_t * alsa_dev;
+    int k, readcount, subformat;
 
-    /* Open the PCM device in playback mode */
-    if (pcm = snd_pcm_open(&config.pcm_handle, PCM_DEVICE, SND_PCM_STREAM_PLAYBACK, 0) < 0) {
-        printf("ERROR: Can't open \"%s\" PCM device. %s\n", PCM_DEVICE, snd_strerror(pcm));
+    memset(&sfinfo, 0, sizeof(sfinfo));
+
+    printf("Playing %s\n", fileName);
+    if (!(sndfile = sf_open(fileName, SFM_READ, &sfinfo))) {
+        puts(sf_strerror(NULL));
+        return;
     }
 
-    /* Allocate parameters object and fill it with default values*/
-    snd_pcm_hw_params_alloca(&config.params);
-
-    snd_pcm_hw_params_any(config.pcm_handle, config.params);
-
-    /* Set parameters */
-    if (pcm = snd_pcm_hw_params_set_access(config.pcm_handle, config.params, SND_PCM_ACCESS_RW_INTERLEAVED) < 0) {
-        printf("ERROR: Can't set interleaved mode. %s\n", snd_strerror(pcm));
+    if (sfinfo.channels < 1 || sfinfo.channels > 2) {
+        printf("Error : channels = %d.\n", sfinfo.channels);
+        return;
     }
 
-    if (pcm = snd_pcm_hw_params_set_format(config.pcm_handle, config.params, SND_PCM_FORMAT_S16_LE) < 0)  {
-        printf("ERROR: Can't set format. %s\n", snd_strerror(pcm));
+    if ((alsa_dev = alsa_open(sfinfo.channels, (unsigned) sfinfo.samplerate, SF_FALSE)) == NULL) {
+        return;
     }
 
-    if (pcm = snd_pcm_hw_params_set_channels(config.pcm_handle, config.params, channels) < 0)  {
-        printf("ERROR: Can't set channels number. %s\n", snd_strerror(pcm));
+    subformat = sfinfo.format & SF_FORMAT_SUBMASK;
+
+    if (subformat == SF_FORMAT_FLOAT || subformat == SF_FORMAT_DOUBLE) {
+        double scale;
+        int m;
+
+        sf_command(sndfile, SFC_CALC_SIGNAL_MAX, &scale, sizeof (scale));
+        if (scale > 1.0) {
+            scale = 1.0 / scale;
+        }
+        else {
+            scale = 1.0;
+        }
+
+        while ((readcount = sf_read_float(sndfile, buffer, BUFFER_LEN))) {
+            for (m = 0; m < readcount; m++) {
+                buffer[m] *= scale;
+            }
+
+            alsa_write_float(alsa_dev, buffer, BUFFER_LEN / sfinfo.channels, sfinfo.channels);
+        }
     }
+    else {
+        while ((readcount = sf_read_float(sndfile, buffer, BUFFER_LEN))) {
+            alsa_write_float(alsa_dev, buffer, BUFFER_LEN / sfinfo.channels, sfinfo.channels);
+        }
+    };
 
-    if (pcm = snd_pcm_hw_params_set_rate_near(config.pcm_handle, config.params, &rate, 0) < 0) { 
-        printf("ERROR: Can't set rate. %s\n", snd_strerror(pcm));
+    snd_pcm_drain(alsa_dev);
+    snd_pcm_close(alsa_dev);
+
+    sf_close(sndfile);
+
+    return;
+} /* alsa_play */
+
+static snd_pcm_t *
+alsa_open(int channels, unsigned samplerate, int realtime) {
+    const char * device = "default";
+    snd_pcm_t *alsa_dev = NULL;
+    snd_pcm_hw_params_t *hw_params;
+    snd_pcm_uframes_t buffer_size;
+    snd_pcm_uframes_t alsa_period_size, alsa_buffer_frames;
+    snd_pcm_sw_params_t *sw_params;
+
+    int err;
+
+    if (realtime) {
+        alsa_period_size = 256;
+        alsa_buffer_frames = 3 * alsa_period_size;
     }
-    
-    /* Write parameters */
-    if (pcm = snd_pcm_hw_params(config.pcm_handle, config.params) < 0) {
-        printf("ERROR: Can't set hardware parameters. %s\n", snd_strerror(pcm));
-    }
+    else {
+        alsa_period_size = 1024;
+        alsa_buffer_frames = 4 * alsa_period_size;
+    };
 
-    /* Resume information */
-    printf("PCM name: '%s'\n", snd_pcm_name(config.pcm_handle));
+    if ((err = snd_pcm_open(&alsa_dev, device, SND_PCM_STREAM_PLAYBACK, 0)) < 0) {
+        fprintf(stderr, "cannot open audio device \"%s\" (%s)\n", device, snd_strerror(err));
+        goto catch_error;
+    };
 
-    printf("PCM state: %s\n", snd_pcm_state_name(snd_pcm_state(config.pcm_handle)));
+    snd_pcm_nonblock(alsa_dev, 0);
 
-    snd_pcm_hw_params_get_channels(config.params, &tmpVar);
-    printf("channels: %u ", tmpVar);
+    if ((err = snd_pcm_hw_params_malloc(&hw_params)) < 0) {
+        fprintf(stderr, "cannot allocate hardware parameter structure (%s)\n", snd_strerror(err));
+        goto catch_error;
+    };
 
-    if (tmpVar == 1) {
-        printf("(mono)\n");
-    }
-    else if (tmpVar == 2) {
-        printf("(stereo)\n");
-    }
-    
-    snd_pcm_hw_params_get_rate(config.params, &tmpVar, 0);
-    printf("rate: %u bps\n", tmpVar);
+    if ((err = snd_pcm_hw_params_any(alsa_dev, hw_params)) < 0) {
+        fprintf(stderr, "cannot initialize hardware parameter structure (%s)\n", snd_strerror(err));
+        goto catch_error;
+    };
 
-    printf("seconds: %d\n", seconds);	
+    if ((err = snd_pcm_hw_params_set_access(alsa_dev, hw_params, SND_PCM_ACCESS_RW_INTERLEAVED)) < 0) {
+        fprintf(stderr, "cannot set access type (%s)\n", snd_strerror(err));
+        goto catch_error;
+    };
 
-    /* Allocate buffer to hold single period */
-    snd_pcm_hw_params_get_period_size(config.params, &config.frames, 0);
+    if ((err = snd_pcm_hw_params_set_format(alsa_dev, hw_params, SND_PCM_FORMAT_FLOAT)) < 0) {
+        fprintf(stderr, "cannot set sample format (%s)\n", snd_strerror(err));
+        goto catch_error;
+    };
 
-    
-    config.buff_size = config.frames * channels * 2 /* 2 -> sample size */;
-    config.buffer = (char *) malloc(config.buff_size);
+    if ((err = snd_pcm_hw_params_set_rate_near(alsa_dev, hw_params, &samplerate, 0)) < 0) {
+        fprintf(stderr, "cannot set sample rate (%s)\n", snd_strerror(err));
+        goto catch_error;
+    };
 
-    snd_pcm_hw_params_get_period_time(config.params, &tmpVar, NULL);
-    
-    return &config;
-}
+    if ((err = snd_pcm_hw_params_set_channels(alsa_dev, hw_params, channels)) < 0) {
+        fprintf(stderr, "cannot set channel count (%s)\n", snd_strerror(err));
+        goto catch_error;
+    };
 
-int playAudioTest(char *file) {
-    printf("Playing audio...\n");;
-        
-    printf("File: %s\n", file);
-    
-  
-    struct SoundConfig * soundCfg = setupAudio();
+    if ((err = snd_pcm_hw_params_set_buffer_size_near(alsa_dev, hw_params, &alsa_buffer_frames)) < 0) {
+        fprintf(stderr, "cannot set buffer size (%s)\n", snd_strerror(err));
+        goto catch_error;
+    };
 
-    
-    return 0;
-//    for (loops = (seconds * 1000000) / tmpVar; loops > 0; loops--) {
-//
-//        if (pcm = read(0, buff, buff_size) == 0) {
-//            printf("Early end of file.\n");
-//            return 0;
-//        }
-//
-//        if (pcm = snd_pcm_writei(pcm_handle, buff, frames) == -EPIPE) {
-//            printf("XRUN.\n");
-//            snd_pcm_prepare(pcm_handle);
-//        }
-//        else if (pcm < 0) {
-//            printf("ERROR. Can't write to PCM device. %s\n", snd_strerror(pcm));
-//        }
-//
-//    }
-//
-//    snd_pcm_drain(pcm_handle);
-//    snd_pcm_close(pcm_handle);
-//    free(buff);
-    
-//    return 0;
-}
+    if ((err = snd_pcm_hw_params_set_period_size_near(alsa_dev, hw_params, &alsa_period_size, 0)) < 0) {
+        fprintf(stderr, "cannot set period size (%s)\n", snd_strerror(err));
+        goto catch_error;
+    };
+
+    if ((err = snd_pcm_hw_params(alsa_dev, hw_params)) < 0) {
+        fprintf(stderr, "cannot set parameters (%s)\n", snd_strerror(err));
+        goto catch_error;
+    };
+
+    /* extra check: if we have only one period, this code won't work */
+    snd_pcm_hw_params_get_period_size(hw_params, &alsa_period_size, 0);
+    snd_pcm_hw_params_get_buffer_size(hw_params, &buffer_size);
+    if (alsa_period_size == buffer_size) {
+        fprintf(stderr, "Can't use period equal to buffer size (%lu == %lu)", alsa_period_size, buffer_size);
+        goto catch_error;
+    };
+
+    snd_pcm_hw_params_free(hw_params);
+
+    if ((err = snd_pcm_sw_params_malloc(&sw_params)) != 0) {
+        fprintf(stderr, "%s: snd_pcm_sw_params_malloc: %s", __func__, snd_strerror(err));
+        goto catch_error;
+    };
+
+    if ((err = snd_pcm_sw_params_current(alsa_dev, sw_params)) != 0) {
+        fprintf(stderr, "%s: snd_pcm_sw_params_current: %s", __func__, snd_strerror(err));
+        goto catch_error;
+    };
+
+    /* note: set start threshold to delay start until the ring buffer is full */
+    snd_pcm_sw_params_current(alsa_dev, sw_params);
+
+    if ((err = snd_pcm_sw_params_set_start_threshold(alsa_dev, sw_params, buffer_size)) < 0) {
+        fprintf(stderr, "cannot set start threshold (%s)\n", snd_strerror(err));
+        goto catch_error;
+    };
+
+    if ((err = snd_pcm_sw_params(alsa_dev, sw_params)) != 0) {
+        fprintf(stderr, "%s: snd_pcm_sw_params: %s", __func__, snd_strerror(err));
+        goto catch_error;
+    };
+
+    snd_pcm_sw_params_free(sw_params);
+
+    snd_pcm_reset(alsa_dev);
+
+catch_error:
+
+    if (err < 0 && alsa_dev != NULL) {
+        snd_pcm_close(alsa_dev);
+        return NULL;
+    };
+
+    return alsa_dev;
+} /* alsa_open */
+
+static int
+alsa_write_float(snd_pcm_t *alsa_dev, float *data, int frames, int channels) {
+    static int epipe_count = 0;
+
+    int total = 0;
+    int retval;
+
+    if (epipe_count > 0)
+        epipe_count--;
+
+    while (total < frames) {
+        retval = snd_pcm_writei(alsa_dev, data + total * channels, frames - total);
+
+        if (retval >= 0) {
+            total += retval;
+            if (total == frames)
+                return total;
+
+            continue;
+        };
+
+        switch (retval) {
+                case -EAGAIN:
+                puts("alsa_write_float: EAGAIN");
+                continue;
+                break;
+
+            case -EPIPE:
+                if (epipe_count > 0) {
+                    printf("alsa_write_float: EPIPE %d\n", epipe_count);
+                    if (epipe_count > 140)
+                        return retval;
+                };
+                epipe_count += 100;
+
+#if 0
+                if (0) {
+                    snd_pcm_status_t *status;
+                    snd_pcm_status_alloca(&status);
+                    if ((retval = snd_pcm_status(alsa_dev, status)) < 0)
+                        fprintf(stderr, "alsa_out: xrun. can't determine length\n");
+                    else if (snd_pcm_status_get_state(status) == SND_PCM_STATE_XRUN) {
+                        struct timeval now, diff, tstamp;
+                        gettimeofday(&now, 0);
+                        snd_pcm_status_get_trigger_tstamp(status, &tstamp);
+                        timersub(&now, &tstamp, &diff);
+                        fprintf(stderr, "alsa_write_float xrun: of at least %.3f msecs. resetting stream\n",
+                                diff.tv_sec * 1000 + diff.tv_usec / 1000.0);
+                    }
+                    else
+                        fprintf(stderr, "alsa_write_float: xrun. can't determine length\n");
+                };
+#endif
+
+                snd_pcm_prepare(alsa_dev);
+                break;
+
+            case -EBADFD:
+                fprintf(stderr, "alsa_write_float: Bad PCM state.n");
+                return 0;
+                break;
+
+            case -ESTRPIPE:
+                fprintf(stderr, "alsa_write_float: Suspend event.n");
+                return 0;
+                break;
+
+            case -EIO:
+                puts("alsa_write_float: EIO");
+                return 0;
+
+            default:
+                fprintf(stderr, "alsa_write_float: retval = %d\n", retval);
+                return 0;
+                break;
+        }; /* switch */
+    }; /* while */
+
+    return total;
+} /* alsa_write_float */
+
