@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/dj-mix-recorder.dir/main.c.o CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.o CMakeFiles/dj-mix-recorder.dir/app/app.c.o  -o dj-mix-recorder -lgtk-3 -lgdk-3 -lpangocairo-1.0 -lpango-1.0 -latk-1.0 -lcairo-gobject -lcairo -lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lasound 
