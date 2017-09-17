@@ -17,17 +17,26 @@ void onPlayPress(GtkWidget *button, gpointer data) {
     g_thread_unref(thread);
 }
 
+void onStopPress(GtkWidget *stopButton, gpointer data) {
+    g_print("Pressed STOP!");
+    stopAudio();
+}
+
 
 void layoutUI(GtkWidget *window) {
     
     GtkWidget *button_box = gtk_button_box_new(GTK_ORIENTATION_HORIZONTAL),
-              *button     = gtk_button_new_with_label("Play");
+              *playButton = gtk_button_new_with_label("Play"),
+              *stopButton = gtk_button_new_with_label("STOP");
     
-    g_signal_connect(button, "clicked", G_CALLBACK(onPlayPress), NULL);
-    
+    g_signal_connect(playButton, "clicked", G_CALLBACK(onPlayPress), NULL);
+    g_signal_connect(stopButton, "clicked", G_CALLBACK(onStopPress), NULL);
+
+    gtk_container_add(GTK_CONTAINER(button_box), playButton);
+    gtk_container_add(GTK_CONTAINER(button_box), stopButton);
+
     gtk_container_add(GTK_CONTAINER(window), button_box);
-    gtk_container_add(GTK_CONTAINER(button_box), button);
-    
+
     
 }
 

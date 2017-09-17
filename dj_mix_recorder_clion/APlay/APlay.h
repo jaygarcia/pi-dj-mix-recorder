@@ -36,13 +36,12 @@
 extern "C" {
 #endif
 
-typedef struct PlayAction {
-    char *fileName;
-    char *type;
-} PlayAction;
 
-void * audioAction(void * ptr);
-void playTrack(char* fileName);
+
+
+void * audioAction(void  *ptr);
+void playTrack(char* fileNameToPlay);
+void stopAudio();
 
 
 #ifdef __cplusplus

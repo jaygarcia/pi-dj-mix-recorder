@@ -78,6 +78,15 @@
 
 
 
+pthread_mutex_t operationMutex;
+
+/* To be locked via mutex */
+char* fileName;
+char* action;
+short isPlaying; // 1 = yes, 0 = no;
+
+
+
 #ifdef SND_CHMAP_API_VERSION
 #define CONFIG_SUPPORT_CHMAP 1
 #endif
@@ -347,19 +356,10 @@ enum {
 
 
 void * audioAction(void *ptr) {
-    int option_index;
-
-    PlayAction *playAction = (PlayAction *)ptr;
-
-    char *action = playAction->type;
-    char *fileName = playAction->fileName;
-
     char *pcm_name = "default";
-    int tmp, err, c;
-    int do_device_list = 0, do_pcm_list = 0;
-    
+    int err;
+
     snd_pcm_info_t *info;
-    FILE *direction;
 
     snd_pcm_info_alloca(&info);
 
@@ -372,11 +372,9 @@ void * audioAction(void *ptr) {
         stream = SND_PCM_STREAM_CAPTURE;
         file_type = FORMAT_WAVE;
         start_delay = 1;
-        direction = stdout;
     }
     else if (strstr(action, "play")) {
         stream = SND_PCM_STREAM_PLAYBACK;
-        direction = stdin;
     }
     
 
@@ -418,19 +416,19 @@ void * audioAction(void *ptr) {
     err = snd_pcm_open(&handle, pcm_name, stream, open_mode);
     if (err < 0) {
         error(_("audio open error: %s"), snd_strerror(err));
-        return;
+        return NULL;
     }
 
     if ((err = snd_pcm_info(handle, info)) < 0) {
         error(_("info error: %s"), snd_strerror(err));
-        return;
+        return NULL;
     }
 
     if (nonblock) {
         err = snd_pcm_nonblock(handle, 1);
         if (err < 0) {
             error(_("nonblock setting error: %s"), snd_strerror(err));
-            return;
+            return NULL;
         }
     }
 
@@ -440,7 +438,7 @@ void * audioAction(void *ptr) {
     audiobuf = (u_char *) malloc(1024);
     if (audiobuf == NULL) {
         error(_("not enough memory"));
-        return;
+        return NULL;
     }
 
     if (mmap_flag) {
@@ -467,7 +465,7 @@ void * audioAction(void *ptr) {
         else {
             error(_("Cannot create process ID file %s: %s"),
                     pidfile_name, strerror(errno));
-            return;
+            return NULL;
         }
     }
 
@@ -480,7 +478,7 @@ void * audioAction(void *ptr) {
 
     if (interleaved) {
 
-        while (1) {
+        while (isPlaying == 1) {
 
             if (stream == SND_PCM_STREAM_PLAYBACK) {
                 playback(fileName);
@@ -501,25 +499,45 @@ void * audioAction(void *ptr) {
 __end:
     snd_output_close(log);
     snd_config_update_free_global();
-    prg_exit(EXIT_SUCCESS);
+//    prg_exit(EXIT_SUCCESS);
     /* avoid warning */
-    return;
+    return NULL;
 }
 
 
+pthread_mutex_t operationMutex;
+
+/* To be locked via mutex */
+char* fileName;
+char* action;
+short isPlaying = 0; // 1 = yes, 0 = no;
 
 
-void playTrack(char* fileName) {
-    PlayAction *action = malloc(sizeof(PlayAction));
-    int len = strlen(fileName);
-    action->fileName = malloc(sizeof(char) * len);
-    action->fileName = strdup(fileName);
-    action->type = "play";
+void stopAudio() {
+    pthread_mutex_lock(&operationMutex);
+    isPlaying = 0;
+
+    pthread_mutex_unlock(&operationMutex);
+}
+
+void playTrack(char* fileNameToPlay) {
+
+    /** LOCK **/
+    pthread_mutex_lock(&operationMutex);
+//    free(fileName);
+    fileName = malloc(sizeof(char) * strlen(fileNameToPlay));
+    fileName = strdup(fileNameToPlay);
+
+//    free(action);
+    action = "play";
+    isPlaying = 1;
+
+    /** UNLOCK **/
+    pthread_mutex_unlock(&operationMutex);
+
 
     pthread_t playThread;
-    pthread_create(&playThread, NULL, audioAction,  &action);
-
-
+    pthread_create(&playThread, NULL, audioAction, NULL);
 }
 /*
  * Safe read (for pipes)
@@ -1885,9 +1903,6 @@ Fill_the_buffer: /* need this for repeat */
             output = 0;
             switch (bp->type) {
                 case 0:
-#if 0
-                    d_printf("Terminator\n");
-#endif
                     return; /* VOC-file stop */
                 case 1:
                     vd = (VocVoiceData *) data;
@@ -2308,7 +2323,7 @@ static void playback_go(int fd, size_t loaded, off64_t count, int rtype, char *n
         memmove(audiobuf, audiobuf + written, loaded);
 
     l = loaded;
-    while (written < count && !in_aborting) {
+    while (written < count && !in_aborting && isPlaying == 1) {
         do {
             c = count - written;
             if (c > chunk_bytes)
@@ -2344,7 +2359,7 @@ static void playback_go(int fd, size_t loaded, off64_t count, int rtype, char *n
 /*
  *  let's play or capture it (capture_type says VOC/WAVE/raw)
  */
-
+// TODO: Clean up to remove std*, VOC, and AU code
 static void playback(char *name) {
     int ofs;
     size_t dta;
@@ -2376,7 +2391,6 @@ static void playback(char *name) {
             dta - sizeof (AuHeader)) != dta - sizeof (AuHeader)) {
         error(_("read error"));
         prg_exit(EXIT_FAILURE);
-        ;
     }
     if ((ofs = test_vocfile(audiobuf)) >= 0) {
         pbrec_count = calc_count();
