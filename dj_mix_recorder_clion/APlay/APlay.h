@@ -35,9 +35,14 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-    
-    
-int audioAction(char *fileName, char *action);
+
+typedef struct PlayAction {
+    char *fileName;
+    char *type;
+} PlayAction;
+
+void * audioAction(void * ptr);
+void playTrack(char* fileName);
 
 
 #ifdef __cplusplus

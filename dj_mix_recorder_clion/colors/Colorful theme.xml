@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scheme name="Colorful theme" version="1" parent_scheme="Default">
+	<option name="LINE_SPACING" value="1.0" />
+	<option name="EDITOR_FONT_SIZE" value="12" />
+	<option name="EDITOR_FONT_NAME" value="Menlo" />
+	<colors>
+	</colors>
+	<attributes>
+		<option name="XML_TAG_NAME">
+			<value>
+				<option name="FOREGROUND" value="e8cf01" />
+			</value>
+		</option>
+		<option name="XML_TAG">
+			<value>
+				<option name="FOREGROUND" value="b4e80b" />
+			</value>
+		</option>
+		<option name="XML_PROLOGUE">
+			<value>
+				<option name="FOREGROUND" value="e817e8" />
+			</value>
+		</option>
+		<option name="XML_NS_PREFIX">
+			<value>
+				<option name="FOREGROUND" value="92aa10" />
+			</value>
+		</option>
+		<option name="XML_ENTITY_REFERENCE">
+			<value>
+				<option name="FOREGROUND" value="9973be" />
+			</value>
+		</option>
+		<option name="XML_COMMENT">
+			<value>
+				<option name="FONT_TYPE" value="2" />
+				<option name="FOREGROUND" value="88067" />
+			</value>
+		</option>
+		<option name="XML_ATTRIBUTE_VALUE">
+			<value>
+				<option name="FOREGROUND" value="e7cc2" />
+			</value>
+		</option>
+		<option name="XML_ATTRIBUTE_NAME">
+			<value>
+				<option name="FOREGROUND" value="43ba11" />
+			</value>
+		</option>
+		<option name="TYPE_PARAMETER_NAME_ATTRIBUTES">
+			<value>
+				<option name="FOREGROUND" value="ffca47" />
+			</value>
+		</option>
+		<option name="STATIC_METHOD_ATTRIBUTES">
+			<value>
+				<option name="FONT_TYPE" value="2" />
+				<option name="FOREGROUND" value="28ffc7" />
+			</value>
+		</option>
+		<option name="STATIC_FIELD_ATTRIBUTES">
+			<value>
+				<option name="FONT_TYPE" value="2" />
+				<option name="FOREGROUND" value="1eaa9d" />
+				<option name="EFFECT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="PARAMETER_ATTRIBUTES">
+			<value>
+				<option name="FOREGROUND" value="ffca47" />
+			</value>
+		</option>
+		<option name="METHOD_CALL_ATTRIBUTES">
+			<value>
+				<option name="FOREGROUND" value="bbff0d" />
+			</value>
+		</option>
+		<option name="LOGCAT_WARNING_OUTPUT">
+			<value>
+				<option name="FOREGROUND" value="bb921b" />
+			</value>
+		</option>
+		<option name="LOGCAT_VERBOSE_OUTPUT">
+			<value>
+				<option name="FOREGROUND" value="24abbb" />
+			</value>
+		</option>
+		<option name="LOGCAT_INFO_OUTPUT">
+			<value>
+				<option name="FOREGROUND" value="7bb0e" />
+			</value>
+		</option>
+		<option name="LOGCAT_ERROR_OUTPUT">
+			<value>
+				<option name="FOREGROUND" value="ff1a29" />
+			</value>
+		</option>
+		<option name="LOGCAT_DEBUG_OUTPUT">
+			<value>
+				<option name="FOREGROUND" value="8658bb" />
+			</value>
+		</option>
+		<option name="LOGCAT_ASSERT_OUTPUT">
+			<value>
+				<option name="FOREGROUND" value="ffaf37" />
+			</value>
+		</option>
+		<option name="LOCAL_VARIABLE_ATTRIBUTES">
+			<value>
+				<option name="FOREGROUND" value="53d6ff" />
+			</value>
+		</option>
+		<option name="JSON$STRING">
+			<value>
+				<option name="FOREGROUND" value="9bcc45" />
+			</value>
+		</option>
+		<option name="JSON$PROPERTY_KEY">
+			<value>
+				<option name="FOREGROUND" value="ccb710" />
+			</value>
+		</option>
+		<option name="JSON$NUMBER">
+			<value>
+				<option name="FOREGROUND" value="1eaa9d" />
+			</value>
+		</option>
+		<option name="JSON$LINE_COMMENT">
+			<value>
+				<option name="FOREGROUND" value="9bcc45" />
+			</value>
+		</option>
+		<option name="JSON$KEYWORD">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="1eaa9d" />
+			</value>
+		</option>
+		<option name="JSON$COMMA">
+			<value>
+				<option name="FOREGROUND" value="15aecc" />
+			</value>
+		</option>
+		<option name="JSON$COLON">
+			<value>
+				<option name="FOREGROUND" value="9bcc45" />
+			</value>
+		</option>
+		<option name="JSON$BLOCK_COMMENT">
+			<value>
+				<option name="FOREGROUND" value="59b705" />
+			</value>
+		</option>
+		<option name="JAVA_STRING">
+			<value>
+				<option name="FOREGROUND" value="cc75ac" />
+			</value>
+		</option>
+		<option name="JAVA_SEMICOLON">
+			<value>
+				<option name="FOREGROUND" value="ccb710" />
+			</value>
+		</option>
+		<option name="JAVA_NUMBER">
+			<value>
+				<option name="FOREGROUND" value="b841bb" />
+			</value>
+		</option>
+		<option name="JAVA_LINE_COMMENT">
+			<value>
+				<option name="FOREGROUND" value="b8027" />
+			</value>
+		</option>
+		<option name="JAVA_KEYWORD">
+			<value>
+				<option name="FOREGROUND" value="9bcc45" />
+			</value>
+		</option>
+		<option name="JAVA_DOC_MARKUP">
+			<value>
+				<option name="FOREGROUND" value="1cb778" />
+			</value>
+		</option>
+		<option name="JAVA_BLOCK_COMMENT">
+			<value>
+				<option name="FOREGROUND" value="c8015" />
+			</value>
+		</option>
+		<option name="HTML_ATTRIBUTE_NAME">
+			<value>
+				<option name="FOREGROUND" value="a9b7c6" />
+			</value>
+		</option>
+		<option name="ERRORS_ATTRIBUTES">
+			<value>
+				<option name="ERROR_STRIPE_COLOR" value="9e031d" />
+				<option name="EFFECT_TYPE" value="2" />
+				<option name="EFFECT_COLOR" value="bc3f3c" />
+			</value>
+		</option>
+		<option name="ANONYMOUS_CLASS_NAME_ATTRIBUTES">
+			<value>
+				<option name="FOREGROUND" value="13ff60" />
+			</value>
+		</option>
+		<option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES">
+			<value>
+				<option name="FOREGROUND" value="2ba3ff" />
+			</value>
+		</option>
+		<option name="ABSTRACT_METHOD_ATTRIBUTES">
+			<value>
+				<option name="FOREGROUND" value="ddff55" />
+			</value>
+		</option>
+		<option name="ABSTRACT_CLASS_NAME_ATTRIBUTES">
+			<value>
+				<option name="FOREGROUND" value="bfff23" />
+				<option name="EFFECT_TYPE" value="1" />
+			</value>
+		</option>
+	</attributes>
+</scheme>

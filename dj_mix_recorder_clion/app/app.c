@@ -3,16 +3,17 @@
 #include "../APlay/APlay.h"
 
 
-void playAudio(gpointer data) {
-  audioAction("/home/jgarcia/projects/djsr/song.wav", "play");
+void * playAudio(gpointer data) {
+//  audioAction("/home/jgarcia/projects/djsr/song.wav", "play");
+    playTrack("/home/jgarcia/projects/djsr/song.wav");
 }
 
 void onPlayPress(GtkWidget *button, gpointer data) {
     g_print("Pressed play!");
     GThread *thread;
-    
-    thread = g_thread_new("audio_player", playAudio, NULL);
-    
+
+    thread = g_thread_new("audio_player", &playAudio, NULL);
+
     g_thread_unref(thread);
 }
 

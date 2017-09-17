@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scheme name="max" version="1" parent_scheme="Default">
+	<option name="LINE_SPACING" value="1.0" />
+	<option name="EDITOR_FONT_SIZE" value="12" />
+	<option name="EDITOR_FONT_NAME" value="Menlo" />
+	<colors>
+		<option name="CARET_ROW_COLOR" value="000000" />
+		<option name="CONSOLE_BACKGROUND_KEY" value="c4c4c4" />
+		<option name="RIGHT_MARGIN_COLOR" value="000000" />
+	</colors>
+	<attributes>
+		<option name="CONSOLE_USER_INPUT">
+			<value>
+				<option name="FOREGROUND" value="007f00" />
+			</value>
+		</option>
+		<option name="DEFAULT_KEYWORD">
+			<value>
+				<option name="FOREGROUND" value="000080" />
+			</value>
+		</option>
+		<option name="DEFAULT_NUMBER">
+			<value>
+				<option name="FOREGROUND" value="008080" />
+			</value>
+		</option>
+		<option name="DEFAULT_STRING">
+			<value>
+				<option name="FOREGROUND" value="205837" />
+			</value>
+		</option>
+		<option name="IDENTIFIER_UNDER_CARET_ATTRIBUTES">
+			<value>
+				<option name="ERROR_STRIPE_COLOR" value="baa8ff" />
+			</value>
+		</option>
+		<option name="MATCHED_BRACE_ATTRIBUTES">
+			<value>
+				<option name="BACKGROUND" value="b1c5da" />
+			</value>
+		</option>
+		<option name="PY$DOC_COMMENT_TAG">
+			<value>
+				<option name="EFFECT_TYPE" value="1" />
+				<option name="EFFECT_COLOR" value="808080" />
+			</value>
+		</option>
+		<option name="PY$KEYWORD_ARGUMENT">
+			<value>
+				<option name="FOREGROUND" value="660e7a" />
+			</value>
+		</option>
+		<option name="PY$STRING$B">
+			<value>
+				<option name="FOREGROUND" value="008080" />
+			</value>
+		</option>
+		<option name="PY$STRING$U">
+			<value>
+				<option name="FOREGROUND" value="008080" />
+			</value>
+		</option>
+		<option name="PY$VALID_STRING_ESCAPE">
+			<value>
+				<option name="FOREGROUND" value="000080" />
+			</value>
+		</option>
+		<option name="TEXT">
+			<value>
+				<option name="FOREGROUND" value="000000" />
+				<option name="BACKGROUND" value="c2c2c2" />
+			</value>
+		</option>
+		<option name="WARNING_ATTRIBUTES">
+			<value>
+				<option name="BACKGROUND" value="fff682" />
+				<option name="ERROR_STRIPE_COLOR" value="ebc700" />
+				<option name="EFFECT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES">
+			<value>
+				<option name="ERROR_STRIPE_COLOR" value="f0adf0" />
+			</value>
+		</option>
+	</attributes>
+</scheme>

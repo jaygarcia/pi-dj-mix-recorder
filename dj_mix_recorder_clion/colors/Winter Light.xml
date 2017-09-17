@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scheme name="Winter Light" version="1" parent_scheme="Default">
+	<option name="LINE_SPACING" value="1.0" />
+	<option name="EDITOR_FONT_SIZE" value="12" />
+	<option name="EDITOR_FONT_NAME" value="Menlo" />
+	<colors>
+	</colors>
+	<attributes>
+		<option name="DEFAULT_FUNCTION_DECLARATION">
+			<value>
+				<option name="FOREGROUND" value="f07eb6" />
+			</value>
+		</option>
+		<option name="DEFAULT_IDENTIFIER">
+			<value>
+				<option name="FOREGROUND" value="dba1f1" />
+			</value>
+		</option>
+		<option name="DEFAULT_INSTANCE_FIELD">
+			<value>
+				<option name="FOREGROUND" value="b9bed4" />
+			</value>
+		</option>
+		<option name="DEFAULT_KEYWORD">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="7f7dd8" />
+			</value>
+		</option>
+		<option name="DEFAULT_NUMBER">
+			<value>
+				<option name="FOREGROUND" value="5c86a6" />
+			</value>
+		</option>
+		<option name="DEFAULT_PARAMETER">
+			<value>
+				<option name="FOREGROUND" value="a6d7f5" />
+			</value>
+		</option>
+		<option name="DEFAULT_STRING">
+			<value>
+				<option name="FOREGROUND" value="769663" />
+			</value>
+		</option>
+		<option name="JS$LOCAL_VARIABLE">
+			<value>
+				<option name="FOREGROUND" value="85acd8" />
+			</value>
+		</option>
+		<option name="TEXT">
+			<value>
+				<option name="FOREGROUND" value="a9b7c6" />
+				<option name="BACKGROUND" value="292829" />
+				<option name="EFFECT_TYPE" value="5" />
+			</value>
+		</option>
+	</attributes>
+</scheme>

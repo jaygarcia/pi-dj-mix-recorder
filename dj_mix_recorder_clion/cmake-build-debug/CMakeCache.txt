@@ -298,6 +298,14 @@ CMAKE_GENERATOR:INTERNAL=Unix Makefiles
 CMAKE_GENERATOR_PLATFORM:INTERNAL=
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
+//Have symbol pthread_create
+CMAKE_HAVE_LIBC_CREATE:INTERNAL=
+//Have library pthreads
+CMAKE_HAVE_PTHREADS_CREATE:INTERNAL=
+//Have library pthread
+CMAKE_HAVE_PTHREAD_CREATE:INTERNAL=1
+//Have include pthread.h
+CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/home/jgarcia/projects/djsr/dj_mix_recorder_clion
@@ -363,6 +371,8 @@ CMAKE_UNAME:INTERNAL=/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding PkgConfig
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29.1()]
+//Details about finding Threads
+FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 GTK3_CFLAGS:INTERNAL=-pthread;-I/usr/include/gtk-3.0;-I/usr/include/at-spi2-atk/2.0;-I/usr/include/at-spi-2.0;-I/usr/include/dbus-1.0;-I/usr/lib/x86_64-linux-gnu/dbus-1.0/include;-I/usr/include/gtk-3.0;-I/usr/include/gio-unix-2.0/;-I/usr/include/mirclient;-I/usr/include/mircore;-I/usr/include/mircookie;-I/usr/include/cairo;-I/usr/include/pango-1.0;-I/usr/include/harfbuzz;-I/usr/include/pango-1.0;-I/usr/include/atk-1.0;-I/usr/include/cairo;-I/usr/include/pixman-1;-I/usr/include/freetype2;-I/usr/include/libpng16;-I/usr/include/gdk-pixbuf-2.0;-I/usr/include/libpng16;-I/usr/include/glib-2.0;-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
 GTK3_CFLAGS_I:INTERNAL=
 GTK3_CFLAGS_OTHER:INTERNAL=-pthread

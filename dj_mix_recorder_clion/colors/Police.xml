@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scheme name="Police" version="1" parent_scheme="Default">
+	<option name="LINE_SPACING" value="1.0" />
+	<option name="EDITOR_FONT_SIZE" value="12" />
+	<option name="EDITOR_FONT_NAME" value="Menlo" />
+	<colors>
+	</colors>
+	<attributes>
+		<option name="DEFAULT_COMMA">
+			<value>
+				<option name="FOREGROUND" value="fdfdfe" />
+			</value>
+		</option>
+		<option name="DEFAULT_CONSTANT">
+			<value>
+				<option name="FONT_TYPE" value="2" />
+				<option name="FOREGROUND" value="ae69ff" />
+			</value>
+		</option>
+		<option name="DEFAULT_INSTANCE_FIELD">
+			<value>
+				<option name="FOREGROUND" value="ae69ff" />
+			</value>
+		</option>
+		<option name="DEFAULT_KEYWORD">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="2a6ff" />
+			</value>
+		</option>
+		<option name="DEFAULT_METADATA">
+			<value>
+				<option name="FOREGROUND" value="fff933" />
+			</value>
+		</option>
+		<option name="DEFAULT_SEMICOLON">
+			<value>
+				<option name="FOREGROUND" value="fdfdfe" />
+			</value>
+		</option>
+		<option name="DEFAULT_STATIC_FIELD">
+			<value>
+				<option name="FONT_TYPE" value="2" />
+				<option name="FOREGROUND" value="ae69ff" />
+			</value>
+		</option>
+		<option name="Scala Abstract class">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="fdfdfe" />
+			</value>
+		</option>
+		<option name="Scala Annotation name">
+			<value>
+				<option name="FOREGROUND" value="d0ff08" />
+				<option name="EFFECT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="Scala Assign">
+			<value>
+				<option name="FOREGROUND" value="ffffff" />
+			</value>
+		</option>
+		<option name="Scala Block comment">
+			<value>
+				<option name="FOREGROUND" value="d0ff08" />
+			</value>
+		</option>
+		<option name="Scala Class">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="1d8ff" />
+				<option name="EFFECT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="Scala Class method call">
+			<value>
+				<option name="FOREGROUND" value="ffffff" />
+				<option name="EFFECT_TYPE" value="5" />
+			</value>
+		</option>
+		<option name="Scala For statement value">
+			<value>
+				<option name="FOREGROUND" value="f8fdff" />
+			</value>
+		</option>
+		<option name="Scala Immutable Collection">
+			<value>
+				<option name="EFFECT_TYPE" value="5" />
+				<option name="EFFECT_COLOR" value="54fb59" />
+			</value>
+		</option>
+		<option name="Scala Invalid escape in string">
+			<value>
+				<option name="FOREGROUND" value="fb0011" />
+				<option name="EFFECT_TYPE" value="2" />
+				<option name="EFFECT_COLOR" value="ff0000" />
+			</value>
+		</option>
+		<option name="Scala Keyword">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="2a6ff" />
+			</value>
+		</option>
+		<option name="Scala Line comment">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="c1da0b" />
+			</value>
+		</option>
+		<option name="Scala Local value">
+			<value>
+				<option name="FOREGROUND" value="fdfdfe" />
+			</value>
+		</option>
+		<option name="Scala Local variable">
+			<value>
+				<option name="FONT_TYPE" value="2" />
+				<option name="FOREGROUND" value="fdfdfe" />
+			</value>
+		</option>
+		<option name="Scala Method declaration">
+			<value>
+				<option name="FOREGROUND" value="ffffff" />
+				<option name="EFFECT_TYPE" value="1" />
+				<option name="EFFECT_COLOR" value="7b7b7b" />
+			</value>
+		</option>
+		<option name="Scala Mutable Collection">
+			<value>
+				<option name="EFFECT_TYPE" value="5" />
+				<option name="EFFECT_COLOR" value="fb0011" />
+			</value>
+		</option>
+		<option name="Scala Number">
+			<value>
+				<option name="FOREGROUND" value="ffffff" />
+			</value>
+		</option>
+		<option name="Scala Object">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="ffffff" />
+				<option name="EFFECT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="Scala Object method call">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="ffffff" />
+				<option name="EFFECT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="Scala Parameter">
+			<value>
+				<option name="FOREGROUND" value="ffffff" />
+				<option name="EFFECT_TYPE" value="5" />
+				<option name="EFFECT_COLOR" value="c7ccce" />
+			</value>
+		</option>
+		<option name="Scala Predefined types">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="ffffff" />
+			</value>
+		</option>
+		<option name="Scala String">
+			<value>
+				<option name="FOREGROUND" value="ffb51a" />
+			</value>
+		</option>
+		<option name="Scala Template lazy val/var">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="fdfdfe" />
+				<option name="EFFECT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="Scala Template val">
+			<value>
+				<option name="FOREGROUND" value="fdfdfe" />
+				<option name="EFFECT_TYPE" value="1" />
+				<option name="EFFECT_COLOR" value="7b7b7b" />
+			</value>
+		</option>
+		<option name="Scala Template var">
+			<value>
+				<option name="FONT_TYPE" value="2" />
+				<option name="FOREGROUND" value="fdfdfe" />
+				<option name="EFFECT_TYPE" value="1" />
+				<option name="EFFECT_COLOR" value="7b7b7b" />
+			</value>
+		</option>
+		<option name="Scala Trait">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="fdfdfe" />
+			</value>
+		</option>
+		<option name="Scala Type Alias">
+			<value>
+				<option name="FONT_TYPE" value="3" />
+				<option name="FOREGROUND" value="1d8ff" />
+				<option name="EFFECT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="Scala Type parameter">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="1d8ff" />
+				<option name="EFFECT_TYPE" value="5" />
+				<option name="EFFECT_COLOR" value="1d7fe" />
+			</value>
+		</option>
+		<option name="Scala Valid escape in string">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="ff9c39" />
+			</value>
+		</option>
+		<option name="Scala XML attribute name">
+			<value>
+				<option name="FOREGROUND" value="e8e8e8" />
+			</value>
+		</option>
+		<option name="Scala XML attribute value">
+			<value>
+				<option name="FOREGROUND" value="abd38d" />
+			</value>
+		</option>
+		<option name="Scala XML tag name">
+			<value>
+				<option name="FOREGROUND" value="ffdb61" />
+			</value>
+		</option>
+		<option name="ScalaDoc @param value">
+			<value>
+				<option name="FONT_TYPE" value="3" />
+				<option name="FOREGROUND" value="96e485" />
+				<option name="EFFECT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="ScalaDoc comment">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="d0ff08" />
+			</value>
+		</option>
+		<option name="ScalaDoc comment tag">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="96e485" />
+				<option name="EFFECT_TYPE" value="1" />
+				<option name="EFFECT_COLOR" value="629755" />
+			</value>
+		</option>
+		<option name="ScalaDoc html escape sequences">
+			<value>
+				<option name="FOREGROUND" value="96e485" />
+			</value>
+		</option>
+		<option name="ScalaDoc html tag">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="96e485" />
+			</value>
+		</option>
+		<option name="Standart Java Collection">
+			<value>
+				<option name="EFFECT_TYPE" value="5" />
+				<option name="EFFECT_COLOR" value="4c7ff" />
+			</value>
+		</option>
+		<option name="TEXT">
+			<value>
+				<option name="FOREGROUND" value="deefff" />
+				<option name="BACKGROUND" value="0" />
+				<option name="EFFECT_TYPE" value="5" />
+			</value>
+		</option>
+		<option name="TODO_DEFAULT_ATTRIBUTES">
+			<value>
+				<option name="FONT_TYPE" value="2" />
+				<option name="FOREGROUND" value="c3ff14" />
+				<option name="ERROR_STRIPE_COLOR" value="977ab" />
+			</value>
+		</option>
+	</attributes>
+</scheme>

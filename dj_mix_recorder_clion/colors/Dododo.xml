@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scheme name="Dododo" version="1" parent_scheme="Default">
+	<option name="LINE_SPACING" value="1.0" />
+	<option name="EDITOR_FONT_SIZE" value="12" />
+	<option name="EDITOR_FONT_NAME" value="Menlo" />
+	<colors>
+	</colors>
+	<attributes>
+		<option name="WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES">
+			<value>
+				<option name="BACKGROUND" value="6f6c47" />
+				<option name="ERROR_STRIPE_COLOR" value="b56277" />
+				<option name="EFFECT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="WARNING_ATTRIBUTES">
+			<value>
+				<option name="BACKGROUND" value="38326d" />
+				<option name="ERROR_STRIPE_COLOR" value="a371be" />
+				<option name="EFFECT_TYPE" value="4" />
+				<option name="EFFECT_COLOR" value="b7202f" />
+			</value>
+		</option>
+		<option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
+			<value>
+				<option name="BACKGROUND" value="74324f" />
+				<option name="ERROR_STRIPE_COLOR" value="293d5d" />
+				<option name="EFFECT_COLOR" value="4d604d" />
+			</value>
+		</option>
+		<option name="TEXT">
+			<value>
+				<option name="FOREGROUND" value="b8c2cc" />
+				<option name="BACKGROUND" value="2b2b2b" />
+				<option name="EFFECT_TYPE" value="5" />
+			</value>
+		</option>
+		<option name="SEARCH_RESULT_ATTRIBUTES">
+			<value>
+				<option name="BACKGROUND" value="1f4c52" />
+			</value>
+		</option>
+		<option name="PY$SELF_PARAMETER">
+			<value>
+				<option name="FOREGROUND" value="949187" />
+			</value>
+		</option>
+		<option name="PY$PREDEFINED_USAGE">
+			<value>
+				<option name="FOREGROUND" value="86b292" />
+			</value>
+		</option>
+		<option name="PY$PREDEFINED_DEFINITION">
+			<value>
+				<option name="FOREGROUND" value="a952ca" />
+			</value>
+		</option>
+		<option name="PY$KEYWORD_ARGUMENT">
+			<value>
+				<option name="FOREGROUND" value="a8839b" />
+			</value>
+		</option>
+		<option name="PY$KEYWORD">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="5c8db6" />
+			</value>
+		</option>
+		<option name="PY$BUILTIN_NAME">
+			<value>
+				<option name="FOREGROUND" value="8d69c6" />
+			</value>
+		</option>
+		<option name="NOT_USED_ELEMENT_ATTRIBUTES">
+			<value>
+				<option name="FOREGROUND" value="a3a3a3" />
+				<option name="BACKGROUND" value="1b1b1b" />
+				<option name="EFFECT_TYPE" value="1" />
+				<option name="EFFECT_COLOR" value="6c6c6c" />
+			</value>
+		</option>
+		<option name="INJECTED_LANGUAGE_FRAGMENT">
+			<value>
+				<option name="BACKGROUND" value="293d5d" />
+			</value>
+		</option>
+		<option name="INFO_ATTRIBUTES">
+			<value>
+				<option name="EFFECT_TYPE" value="2" />
+				<option name="EFFECT_COLOR" value="b65fbc" />
+			</value>
+		</option>
+		<option name="IDENTIFIER_UNDER_CARET_ATTRIBUTES">
+			<value>
+				<option name="BACKGROUND" value="416056" />
+				<option name="ERROR_STRIPE_COLOR" value="36b13" />
+				<option name="EFFECT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="FOLDED_TEXT_ATTRIBUTES">
+			<value>
+				<option name="FOREGROUND" value="a7a7a7" />
+				<option name="BACKGROUND" value="3a3a3a" />
+			</value>
+		</option>
+		<option name="ERRORS_ATTRIBUTES">
+			<value>
+				<option name="BACKGROUND" value="340013" />
+				<option name="ERROR_STRIPE_COLOR" value="7bbaa7" />
+				<option name="EFFECT_TYPE" value="2" />
+				<option name="EFFECT_COLOR" value="76f6f0" />
+			</value>
+		</option>
+		<option name="DEFAULT_STRING">
+			<value>
+				<option name="FOREGROUND" value="bab383" />
+			</value>
+		</option>
+		<option name="DEFAULT_PARENTHS">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="DEFAULT_NUMBER">
+			<value>
+				<option name="FOREGROUND" value="7ea49d" />
+			</value>
+		</option>
+		<option name="DEFAULT_LINE_COMMENT">
+			<value>
+				<option name="FOREGROUND" value="629755" />
+			</value>
+		</option>
+		<option name="DEFAULT_INVALID_STRING_ESCAPE">
+			<value>
+				<option name="FOREGROUND" value="ffffff" />
+				<option name="EFFECT_TYPE" value="2" />
+				<option name="EFFECT_COLOR" value="ff94fa" />
+			</value>
+		</option>
+		<option name="DEFAULT_COMMA">
+			<value>
+				<option name="FOREGROUND" value="e9f5ed" />
+			</value>
+		</option>
+		<option name="DEFAULT_BRACKETS">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="EFFECT_TYPE" value="2" />
+			</value>
+		</option>
+		<option name="DEFAULT_BRACES">
+			<value>
+				<option name="FONT_TYPE" value="3" />
+			</value>
+		</option>
+		<option name="BAD_CHARACTER">
+			<value>
+				<option name="FOREGROUND" value="e65df9" />
+				<option name="EFFECT_TYPE" value="2" />
+				<option name="EFFECT_COLOR" value="ff5b7d" />
+			</value>
+		</option>
+	</attributes>
+</scheme>

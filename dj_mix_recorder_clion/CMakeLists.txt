@@ -2,8 +2,10 @@ cmake_minimum_required(VERSION 3.8)
 project(djsr_clion)
 
 set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pthread")
 
 find_package(PkgConfig REQUIRED)
+find_package(Threads)
 
 #GTK3
 pkg_check_modules(GTK3 REQUIRED gtk+-3.0)
@@ -21,4 +23,4 @@ set(SOURCE_FILES main.c APlay/APlay.c APlay/APlay.h APlay/aconfig.h APlay/format
 add_executable(dj-mix-recorder ${SOURCE_FILES})
 
 #Link the libraries
-target_link_libraries(dj-mix-recorder ${GTK3_LIBRARIES} ${ALSA_LIBRARIES})
+target_link_libraries(dj-mix-recorder ${GTK3_LIBRARIES} ${ALSA_LIBRARIES} ${CMAKE_THREADS_LIBS_INIT})

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scheme name="Cloud" version="1" parent_scheme="Default">
+	<option name="LINE_SPACING" value="1.0" />
+	<option name="EDITOR_FONT_SIZE" value="12" />
+	<option name="EDITOR_FONT_NAME" value="Menlo" />
+	<colors>
+	</colors>
+	<attributes>
+		<option name="TEXT">
+			<value>
+				<option name="BACKGROUND" value="eeeef2" />
+			</value>
+		</option>
+		<option name="METHOD_DECLARATION_ATTRIBUTES">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="2068b2" />
+			</value>
+		</option>
+		<option name="METHOD_CALL_ATTRIBUTES">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="2068b2" />
+			</value>
+		</option>
+		<option name="LOCAL_VARIABLE_ATTRIBUTES">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="3002a5" />
+			</value>
+		</option>
+		<option name="INTERFACE_NAME_ATTRIBUTES">
+			<value>
+				<option name="FONT_TYPE" value="3" />
+				<option name="FOREGROUND" value="7b4a4f" />
+			</value>
+		</option>
+		<option name="INHERITED_METHOD_ATTRIBUTES">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="2068b2" />
+			</value>
+		</option>
+		<option name="DELETED_TEXT_ATTRIBUTES">
+			<value>
+				<option name="FOREGROUND" value="127734" />
+				<option name="BACKGROUND" value="f0f0f0" />
+				<option name="EFFECT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="CONSTRUCTOR_DECLARATION_ATTRIBUTES">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="CLASS_NAME_ATTRIBUTES">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="328844" />
+			</value>
+		</option>
+		<option name="ANONYMOUS_CLASS_NAME_ATTRIBUTES">
+			<value>
+				<option name="FONT_TYPE" value="3" />
+				<option name="BACKGROUND" value="ffffff" />
+			</value>
+		</option>
+		<option name="ANNOTATION_NAME_ATTRIBUTES">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="1bcd5" />
+				<option name="EFFECT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES">
+			<value>
+				<option name="FOREGROUND" value="2068b2" />
+			</value>
+		</option>
+		<option name="ABSTRACT_METHOD_ATTRIBUTES">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="2068b2" />
+			</value>
+		</option>
+		<option name="ABSTRACT_CLASS_NAME_ATTRIBUTES">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="baaf37" />
+			</value>
+		</option>
+	</attributes>
+</scheme>

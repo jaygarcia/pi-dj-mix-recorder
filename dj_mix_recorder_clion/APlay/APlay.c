@@ -43,7 +43,7 @@
  *   it under the terms of the GNU General Public License as published by
  *   the Free Software Foundation; either version 2 of the License, or
  *   (at your option) any later version.
- *
+ *f
  *   This program is distributed in the hope that it will be useful,
  *   but WITHOUT ANY WARRANTY; without even the implied warranty of
  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -61,26 +61,22 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
-#include <getopt.h>
 #include <fcntl.h>
-#include <ctype.h>
 #include <errno.h>
 #include <limits.h>
 #include <time.h>
-#include <locale.h>
 #include <alsa/asoundlib.h>
 #include <assert.h>
 #include <termios.h>
 #include <signal.h>
-#include <sys/poll.h>
-#include <sys/uio.h>
 #include <sys/time.h>
 #include <sys/stat.h>
-#include <sys/types.h>
-#include <endian.h>
 #include "aconfig.h"
 #include "gettext.h"
 #include "formats.h"
+#include <pthread.h>
+
+
 
 #ifdef SND_CHMAP_API_VERSION
 #define CONFIG_SUPPORT_CHMAP 1
@@ -293,46 +289,6 @@ next_card:
     }
 }
 
-static void pcm_list(void) {
-    void **hints, **n;
-    char *name, *descr, *descr1, *io;
-    const char *filter;
-
-    if (snd_device_name_hint(-1, "pcm", &hints) < 0)
-        return;
-    n = hints;
-    filter = stream == SND_PCM_STREAM_CAPTURE ? "Input" : "Output";
-    while (*n != NULL) {
-        name = snd_device_name_get_hint(*n, "NAME");
-        descr = snd_device_name_get_hint(*n, "DESC");
-        io = snd_device_name_get_hint(*n, "IOID");
-        if (io != NULL && strcmp(io, filter) != 0)
-            goto __end;
-        printf("%s\n", name);
-        if ((descr1 = descr) != NULL) {
-            printf("    ");
-            while (*descr1) {
-                if (*descr1 == '\n')
-                    printf("\n    ");
-                else
-                    putchar(*descr1);
-                descr1++;
-            }
-            putchar('\n');
-        }
-__end:
-        if (name != NULL)
-            free(name);
-        if (descr != NULL)
-            free(descr);
-        if (io != NULL)
-            free(io);
-        n++;
-    }
-    snd_device_name_free_hint(hints);
-}
-
-
 
 /*
  *	Subroutine to clean up before exit.
@@ -343,7 +299,6 @@ static void prg_exit(int code) {
         snd_pcm_close(handle);
     if (pidfile_written)
         remove(pidfile_name);
-    exit(code);
 }
 
 static void signal_handler(int sig) {
@@ -389,9 +344,16 @@ enum {
     OPT_FATAL_ERRORS,
 };
 
-int audioAction(char *fileName, char *action) {
+
+
+void * audioAction(void *ptr) {
     int option_index;
-   
+
+    PlayAction *playAction = (PlayAction *)ptr;
+
+    char *action = playAction->type;
+    char *fileName = playAction->fileName;
+
     char *pcm_name = "default";
     int tmp, err, c;
     int do_device_list = 0, do_pcm_list = 0;
@@ -456,19 +418,19 @@ int audioAction(char *fileName, char *action) {
     err = snd_pcm_open(&handle, pcm_name, stream, open_mode);
     if (err < 0) {
         error(_("audio open error: %s"), snd_strerror(err));
-        return 1;
+        return;
     }
 
     if ((err = snd_pcm_info(handle, info)) < 0) {
         error(_("info error: %s"), snd_strerror(err));
-        return 1;
+        return;
     }
 
     if (nonblock) {
         err = snd_pcm_nonblock(handle, 1);
         if (err < 0) {
             error(_("nonblock setting error: %s"), snd_strerror(err));
-            return 1;
+            return;
         }
     }
 
@@ -478,7 +440,7 @@ int audioAction(char *fileName, char *action) {
     audiobuf = (u_char *) malloc(1024);
     if (audiobuf == NULL) {
         error(_("not enough memory"));
-        return 1;
+        return;
     }
 
     if (mmap_flag) {
@@ -505,7 +467,7 @@ int audioAction(char *fileName, char *action) {
         else {
             error(_("Cannot create process ID file %s: %s"),
                     pidfile_name, strerror(errno));
-            return 1;
+            return;
         }
     }
 
@@ -514,19 +476,23 @@ int audioAction(char *fileName, char *action) {
     signal(SIGTERM, signal_handler);
     signal(SIGABRT, signal_handler);
     signal(SIGUSR1, signal_handler_recycle);
-    
+
+
     if (interleaved) {
 
         while (1) {
-            if (stream == SND_PCM_STREAM_PLAYBACK)
+
+            if (stream == SND_PCM_STREAM_PLAYBACK) {
                 playback(fileName);
-            else
+            }
+            else {
                 capture(fileName);
+            }
         }
     }
     
     
-    
+    // Move to stop
     if (verbose == 2)
         putchar('\n');
     snd_pcm_close(handle);
@@ -537,12 +503,29 @@ __end:
     snd_config_update_free_global();
     prg_exit(EXIT_SUCCESS);
     /* avoid warning */
-    return EXIT_SUCCESS;
+    return;
 }
 
+
+
+
+void playTrack(char* fileName) {
+    PlayAction *action = malloc(sizeof(PlayAction));
+    int len = strlen(fileName);
+    action->fileName = malloc(sizeof(char) * len);
+    action->fileName = strdup(fileName);
+    action->type = "play";
+
+    pthread_t playThread;
+    pthread_create(&playThread, NULL, audioAction,  &action);
+
+
+}
 /*
  * Safe read (for pipes)
  */
+
+
 
 static ssize_t safe_read(int fd, void *buf, size_t count) {
     ssize_t result = 0, res;

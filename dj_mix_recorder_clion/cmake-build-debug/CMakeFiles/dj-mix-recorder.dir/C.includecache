@@ -19,19 +19,13 @@ stdlib.h
 -
 string.h
 -
-getopt.h
--
 fcntl.h
--
-ctype.h
 -
 errno.h
 -
 limits.h
 -
 time.h
--
-locale.h
 -
 alsa/asoundlib.h
 -
@@ -41,17 +35,9 @@ termios.h
 -
 signal.h
 -
-sys/poll.h
--
-sys/uio.h
--
 sys/time.h
 -
 sys/stat.h
--
-sys/types.h
--
-endian.h
 -
 aconfig.h
 /home/jgarcia/projects/djsr/dj_mix_recorder_clion/APlay/aconfig.h
@@ -59,6 +45,8 @@ gettext.h
 /home/jgarcia/projects/djsr/dj_mix_recorder_clion/APlay/gettext.h
 formats.h
 /home/jgarcia/projects/djsr/dj_mix_recorder_clion/APlay/formats.h
+pthread.h
+-
 asm/byteorder.h
 -
 

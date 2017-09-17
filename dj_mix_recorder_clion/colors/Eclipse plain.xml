@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scheme name="Eclipse plain" version="1" parent_scheme="Default">
+	<option name="LINE_SPACING" value="1.0" />
+	<option name="EDITOR_FONT_SIZE" value="12" />
+	<option name="EDITOR_FONT_NAME" value="Menlo" />
+	<colors>
+		<option name="SELECTION_FOREGROUND" value="0" />
+		<option name="SELECTION_BACKGROUND" value="b2b4bf" />
+		<option name="CARET_ROW_COLOR" value="e8f2fe" />
+	</colors>
+	<attributes>
+		<option name="XML_TAG_NAME">
+			<value>
+				<option name="FOREGROUND" value="3f7f7f" />
+			</value>
+		</option>
+		<option name="XML_TAG_DATA">
+			<value>
+			</value>
+		</option>
+		<option name="XML_TAG">
+			<value>
+				<option name="FOREGROUND" value="8080" />
+			</value>
+		</option>
+		<option name="XML_PROLOGUE">
+			<value>
+				<option name="FONT_TYPE" value="2" />
+				<option name="FOREGROUND" value="8080" />
+			</value>
+		</option>
+		<option name="XML_ENTITY_REFERENCE">
+			<value>
+				<option name="FOREGROUND" value="2a00ff" />
+			</value>
+		</option>
+		<option name="XML_COMMENT">
+			<value>
+				<option name="FONT_TYPE" value="2" />
+				<option name="FOREGROUND" value="3f5fbf" />
+			</value>
+		</option>
+		<option name="XML_ATTRIBUTE_VALUE">
+			<value>
+				<option name="FONT_TYPE" value="2" />
+				<option name="FOREGROUND" value="2a00ff" />
+			</value>
+		</option>
+		<option name="XML_ATTRIBUTE_NAME">
+			<value>
+				<option name="FOREGROUND" value="7f007f" />
+			</value>
+		</option>
+		<option name="WRONG_REFERENCES_ATTRIBUTES">
+			<value>
+				<option name="ERROR_STRIPE_COLOR" value="ff0080" />
+				<option name="EFFECT_TYPE" value="2" />
+				<option name="EFFECT_COLOR" value="ff0080" />
+			</value>
+		</option>
+		<option name="WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES">
+			<value>
+				<option name="BACKGROUND" value="f0d8a8" />
+				<option name="ERROR_STRIPE_COLOR" value="f3dfb9" />
+			</value>
+		</option>
+		<option name="WARNING_ATTRIBUTES">
+			<value>
+				<option name="ERROR_STRIPE_COLOR" value="f4c82d" />
+				<option name="EFFECT_TYPE" value="2" />
+				<option name="EFFECT_COLOR" value="f4c82d" />
+			</value>
+		</option>
+		<option name="TODO_DEFAULT_ATTRIBUTES">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="7f9fbf" />
+				<option name="ERROR_STRIPE_COLOR" value="2c93f9" />
+			</value>
+		</option>
+		<option name="STATIC_FIELD_ATTRIBUTES">
+			<value>
+				<option name="FONT_TYPE" value="2" />
+				<option name="FOREGROUND" value="c0" />
+			</value>
+		</option>
+		<option name="SCOPE_KEY_Tests">
+			<value>
+			</value>
+		</option>
+		<option name="SCOPE_KEY_Project Files">
+			<value>
+			</value>
+		</option>
+		<option name="SCOPE_KEY_Production">
+			<value>
+			</value>
+		</option>
+		<option name="SCOPE_KEY_Problems">
+			<value>
+			</value>
+		</option>
+		<option name="SCOPE_KEY_Non-Project Files">
+			<value>
+			</value>
+		</option>
+		<option name="SCOPE_KEY_New changelist">
+			<value>
+			</value>
+		</option>
+		<option name="SCOPE_KEY_Default">
+			<value>
+			</value>
+		</option>
+		<option name="SCOPE_KEY_Changed Files">
+			<value>
+			</value>
+		</option>
+		<option name="SCOPE_KEY_All">
+			<value>
+			</value>
+		</option>
+		<option name="REGEXP$REDUNDANT_ESCAPE">
+			<value>
+			</value>
+		</option>
+		<option name="REGEXP$QUOTE_CHARACTER">
+			<value>
+			</value>
+		</option>
+		<option name="REGEXP$PARENTHS">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="REGEXP$META">
+			<value>
+			</value>
+		</option>
+		<option name="REGEXP$INVALID_STRING_ESCAPE">
+			<value>
+			</value>
+		</option>
+		<option name="REGEXP$ESC_CHARACTER">
+			<value>
+			</value>
+		</option>
+		<option name="REGEXP$COMMENT">
+			<value>
+				<option name="FONT_TYPE" value="2" />
+			</value>
+		</option>
+		<option name="REGEXP$CHAR_CLASS">
+			<value>
+				<option name="FOREGROUND" value="9600" />
+			</value>
+		</option>
+		<option name="REGEXP$BRACKETS">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="REGEXP$BRACES">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="REGEXP$BAD_CHARACTER">
+			<value>
+			</value>
+		</option>
+		<option name="PROPERTIES$VALUE">
+			<value>
+				<option name="FOREGROUND" value="800000" />
+			</value>
+		</option>
+		<option name="PROPERTIES$VALID_STRING_ESCAPE">
+			<value>
+				<option name="FOREGROUND" value="800000" />
+			</value>
+		</option>
+		<option name="PROPERTIES$LINE_COMMENT">
+			<value>
+				<option name="FONT_TYPE" value="2" />
+				<option name="FOREGROUND" value="b400" />
+			</value>
+		</option>
+		<option name="PROPERTIES$KEY_VALUE_SEPARATOR">
+			<value>
+				<option name="FOREGROUND" value="8000" />
+			</value>
+		</option>
+		<option name="PROPERTIES$KEY">
+			<value>
+				<option name="FOREGROUND" value="80" />
+				<option name="EFFECT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="PROPERTIES$INVALID_STRING_ESCAPE">
+			<value>
+				<option name="FOREGROUND" value="800000" />
+			</value>
+		</option>
+		<option name="NOT_USED_ELEMENT_ATTRIBUTES">
+			<value>
+				<option name="ERROR_STRIPE_COLOR" value="f4c82d" />
+				<option name="EFFECT_TYPE" value="2" />
+				<option name="EFFECT_COLOR" value="f4c82d" />
+			</value>
+		</option>
+		<option name="MATCHED_BRACE_ATTRIBUTES">
+			<value>
+				<option name="EFFECT_COLOR" value="c0c0c0" />
+			</value>
+		</option>
+		<option name="JAVA_VALID_STRING_ESCAPE">
+			<value>
+				<option name="FOREGROUND" value="c0" />
+			</value>
+		</option>
+		<option name="JAVA_STRING">
+			<value>
+				<option name="FOREGROUND" value="c0" />
+			</value>
+		</option>
+		<option name="JAVA_SEMICOLON">
+			<value>
+				<option name="FOREGROUND" value="0" />
+			</value>
+		</option>
+		<option name="JAVA_PARENTH">
+			<value>
+				<option name="FOREGROUND" value="0" />
+			</value>
+		</option>
+		<option name="JAVA_OPERATION_SIGN">
+			<value>
+				<option name="FOREGROUND" value="0" />
+			</value>
+		</option>
+		<option name="JAVA_NUMBER">
+			<value>
+				<option name="FOREGROUND" value="0" />
+			</value>
+		</option>
+		<option name="JAVA_LINE_COMMENT">
+			<value>
+				<option name="FONT_TYPE" value="2" />
+				<option name="FOREGROUND" value="3f7f5f" />
+			</value>
+		</option>
+		<option name="JAVA_KEYWORD">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="7f0055" />
+			</value>
+		</option>
+		<option name="JAVA_INVALID_STRING_ESCAPE">
+			<value>
+				<option name="FOREGROUND" value="c0" />
+			</value>
+		</option>
+		<option name="JAVA_DOC_TAG">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="7f9fbf" />
+				<option name="EFFECT_TYPE" value="1" />
+			</value>
+		</option>
+		<option name="JAVA_DOC_MARKUP">
+			<value>
+				<option name="FOREGROUND" value="7f7f9f" />
+			</value>
+		</option>
+		<option name="JAVA_DOC_COMMENT">
+			<value>
+				<option name="FOREGROUND" value="3f5fbf" />
+			</value>
+		</option>
+		<option name="JAVA_COMMA">
+			<value>
+				<option name="FOREGROUND" value="0" />
+			</value>
+		</option>
+		<option name="JAVA_BRACKETS">
+			<value>
+				<option name="FOREGROUND" value="0" />
+			</value>
+		</option>
+		<option name="JAVA_BRACES">
+			<value>
+				<option name="FOREGROUND" value="0" />
+			</value>
+		</option>
+		<option name="JAVA_BLOCK_COMMENT">
+			<value>
+				<option name="FOREGROUND" value="3f7f5f" />
+			</value>
+		</option>
+		<option name="INSTANCE_FIELD_ATTRIBUTES">
+			<value>
+				<option name="FOREGROUND" value="c0" />
+			</value>
+		</option>
+		<option name="INFO_ATTRIBUTES">
+			<value>
+				<option name="ERROR_STRIPE_COLOR" value="f4c82d" />
+				<option name="EFFECT_TYPE" value="2" />
+				<option name="EFFECT_COLOR" value="f4c82d" />
+			</value>
+		</option>
+		<option name="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES">
+			<value>
+				<option name="FOREGROUND" value="c0" />
+			</value>
+		</option>
+		<option name="IDENTIFIER_UNDER_CARET_ATTRIBUTES">
+			<value>
+				<option name="BACKGROUND" value="b2b4bf" />
+				<option name="ERROR_STRIPE_COLOR" value="dcdcdc" />
+			</value>
+		</option>
+		<option name="HTML_TAG_NAME">
+			<value>
+				<option name="FOREGROUND" value="3f7f7f" />
+			</value>
+		</option>
+		<option name="HTML_TAG">
+			<value>
+				<option name="FOREGROUND" value="8080" />
+			</value>
+		</option>
+		<option name="HTML_ENTITY_REFERENCE">
+			<value>
+				<option name="FOREGROUND" value="2a00ff" />
+			</value>
+		</option>
+		<option name="HTML_COMMENT">
+			<value>
+				<option name="FONT_TYPE" value="2" />
+				<option name="FOREGROUND" value="3f5fbf" />
+			</value>
+		</option>
+		<option name="HTML_ATTRIBUTE_VALUE">
+			<value>
+				<option name="FONT_TYPE" value="2" />
+				<option name="FOREGROUND" value="2a00ff" />
+			</value>
+		</option>
+		<option name="HTML_ATTRIBUTE_NAME">
+			<value>
+				<option name="FOREGROUND" value="7f007f" />
+			</value>
+		</option>
+		<option name="EXECUTIONPOINT_ATTRIBUTES">
+			<value>
+				<option name="BACKGROUND" value="c6dbae" />
+			</value>
+		</option>
+		<option name="ERRORS_ATTRIBUTES">
+			<value>
+				<option name="ERROR_STRIPE_COLOR" value="ff0080" />
+				<option name="EFFECT_TYPE" value="2" />
+				<option name="EFFECT_COLOR" value="ff0080" />
+			</value>
+		</option>
+		<option name="DEPRECATED_ATTRIBUTES">
+			<value>
+				<option name="ERROR_STRIPE_COLOR" value="f4c82d" />
+				<option name="EFFECT_TYPE" value="3" />
+				<option name="EFFECT_COLOR" value="404040" />
+			</value>
+		</option>
+		<option name="DBNavigator$TextAttributes$SQL$Variable">
+			<value>
+				<option name="EFFECT_TYPE" value="-1" />
+			</value>
+		</option>
+		<option name="DBNavigator$TextAttributes$SQL$String">
+			<value>
+				<option name="FOREGROUND" value="ff" />
+			</value>
+		</option>
+		<option name="DBNavigator$TextAttributes$SQL$QuotedIdentifier">
+			<value>
+				<option name="FOREGROUND" value="8000" />
+			</value>
+		</option>
+		<option name="DBNavigator$TextAttributes$SQL$Number">
+			<value>
+			</value>
+		</option>
+		<option name="DBNavigator$TextAttributes$SQL$LineComment">
+			<value>
+				<option name="FOREGROUND" value="408080" />
+			</value>
+		</option>
+		<option name="DBNavigator$TextAttributes$SQL$Keyword">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="7f0055" />
+			</value>
+		</option>
+		<option name="DBNavigator$TextAttributes$SQL$Function">
+			<value>
+				<option name="FOREGROUND" value="80" />
+				<option name="EFFECT_TYPE" value="-1" />
+			</value>
+		</option>
+		<option name="DBNavigator$TextAttributes$SQL$DataType">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="7f0055" />
+			</value>
+		</option>
+		<option name="DBNavigator$TextAttributes$SQL$BlockComment">
+			<value>
+				<option name="FOREGROUND" value="408080" />
+			</value>
+		</option>
+		<option name="DBNavigator$TextAttributes$PSQL$LineComment">
+			<value>
+				<option name="FOREGROUND" value="408080" />
+			</value>
+		</option>
+		<option name="DBNavigator$TextAttributes$PSQL$Keyword">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="7f0055" />
+			</value>
+		</option>
+		<option name="DBNavigator$TextAttributes$PSQL$DataType">
+			<value>
+				<option name="FONT_TYPE" value="1" />
+				<option name="FOREGROUND" value="7f0055" />
+			</value>
+		</option>
+		<option name="DBNavigator$TextAttributes$PSQL$BlockComment">
+			<value>
+				<option name="FOREGROUND" value="408080" />
+			</value>
+		</option>
+		<option name="CONSOLE_USER_INPUT">
+			<value>
+				<option name="FOREGROUND" value="c87d" />
+			</value>
+		</option>
+		<option name="CONSOLE_ERROR_OUTPUT">
+			<value>
+				<option name="FOREGROUND" value="ff0000" />
+			</value>
+		</option>
+		<option name="BAD_CHARACTER">
+			<value>
+			</value>
+		</option>
+		<option name="ANNOTATION_NAME_ATTRIBUTES">
+			<value>
+				<option name="FOREGROUND" value="646464" />
+				<option name="EFFECT_TYPE" value="1" />
+			</value>
+		</option>
+	</attributes>
+</scheme>
