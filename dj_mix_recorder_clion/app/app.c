@@ -9,16 +9,19 @@ void * playAudio(gpointer data) {
 }
 
 void onPlayPress(GtkWidget *button, gpointer data) {
-    g_print("Pressed play!");
-    GThread *thread;
-
-    thread = g_thread_new("audio_player", &playAudio, NULL);
-
-    g_thread_unref(thread);
+    puts("Pressed play!***");
+    fflush(stdout);
+//    GThread *thread;
+//
+//    thread = g_thread_new("audio_player", &playAudio, NULL);
+//
+//    g_thread_unref(thread);
+    playTrack("/home/jgarcia/projects/djsr/song.wav");
 }
 
 void onStopPress(GtkWidget *stopButton, gpointer data) {
-    g_print("Pressed STOP!");
+    puts("Pressed STOP!****\n\n");
+    fflush(stdout);
     stopAudio();
 }
 
@@ -29,8 +32,8 @@ void layoutUI(GtkWidget *window) {
               *playButton = gtk_button_new_with_label("Play"),
               *stopButton = gtk_button_new_with_label("STOP");
     
-    g_signal_connect(playButton, "clicked", G_CALLBACK(onPlayPress), NULL);
-    g_signal_connect(stopButton, "clicked", G_CALLBACK(onStopPress), NULL);
+    g_signal_connect(playButton, "pressed", G_CALLBACK(onPlayPress), NULL);
+    g_signal_connect(stopButton, "pressed", G_CALLBACK(onStopPress), NULL);
 
     gtk_container_add(GTK_CONTAINER(button_box), playButton);
     gtk_container_add(GTK_CONTAINER(button_box), stopButton);
@@ -48,13 +51,14 @@ void onGtkActivate(GtkApplication* app, gpointer user_data) {
     gtk_window_set_title(GTK_WINDOW(window), "DJ Mix Recorder");
     gtk_window_set_default_size(GTK_WINDOW(window), 500, 500);
     gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
+    gtk_window_activate_focus(GTK_WINDOW(window));
 
     layoutUI(window);
 
     
     gtk_widget_show_all(window);
     
-    g_signal_connect(window, "destroy",  G_CALLBACK(gtk_main_quit), NULL);    
+    g_signal_connect(window, "destroy",  G_CALLBACK(gtk_main_quit), NULL);
 }
 
 

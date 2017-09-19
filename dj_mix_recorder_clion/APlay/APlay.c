@@ -2293,12 +2293,16 @@ static void header(int rtype, char *name) {
                 name);
         fprintf(stderr, "%s, ", snd_pcm_format_description(hwparams.format));
         fprintf(stderr, _("Rate %d Hz, "), hwparams.rate);
-        if (hwparams.channels == 1)
+        if (hwparams.channels == 1) {
             fprintf(stderr, _("Mono"));
-        else if (hwparams.channels == 2)
+        }
+        else if (hwparams.channels == 2) {
             fprintf(stderr, _("Stereo"));
-        else
+        }
+        else {
             fprintf(stderr, _("Channels %i"), hwparams.channels);
+        }
+
         fprintf(stderr, "\n");
     }
 }
