@@ -1,0 +1,3 @@
+/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles/rebuild_cache.dir
+/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles/edit_cache.dir
+/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles/dj-mix-recorder.dir

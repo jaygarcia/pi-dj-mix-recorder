@@ -1,0 +1,51 @@
+
+{
+	"sources" : 
+	[
+		
+		{
+			"file" : "/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles/PROJECT_PORTAUDIO"
+		},
+		
+		{
+			"file" : "/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles/PROJECT_PORTAUDIO.rule"
+		},
+		
+		{
+			"file" : "/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles/PROJECT_PORTAUDIO-complete.rule"
+		},
+		
+		{
+			"file" : "/home/jgarcia/projects/djsr/dj_mix_recorder_clion/libs/portaudio/src/PROJECT_PORTAUDIO-stamp/PROJECT_PORTAUDIO-install.rule"
+		},
+		
+		{
+			"file" : "/home/jgarcia/projects/djsr/dj_mix_recorder_clion/libs/portaudio/src/PROJECT_PORTAUDIO-stamp/PROJECT_PORTAUDIO-mkdir.rule"
+		},
+		
+		{
+			"file" : "/home/jgarcia/projects/djsr/dj_mix_recorder_clion/libs/portaudio/src/PROJECT_PORTAUDIO-stamp/PROJECT_PORTAUDIO-download.rule"
+		},
+		
+		{
+			"file" : "/home/jgarcia/projects/djsr/dj_mix_recorder_clion/libs/portaudio/src/PROJECT_PORTAUDIO-stamp/PROJECT_PORTAUDIO-update.rule"
+		},
+		
+		{
+			"file" : "/home/jgarcia/projects/djsr/dj_mix_recorder_clion/libs/portaudio/src/PROJECT_PORTAUDIO-stamp/PROJECT_PORTAUDIO-patch.rule"
+		},
+		
+		{
+			"file" : "/home/jgarcia/projects/djsr/dj_mix_recorder_clion/libs/portaudio/src/PROJECT_PORTAUDIO-stamp/PROJECT_PORTAUDIO-configure.rule"
+		},
+		
+		{
+			"file" : "/home/jgarcia/projects/djsr/dj_mix_recorder_clion/libs/portaudio/src/PROJECT_PORTAUDIO-stamp/PROJECT_PORTAUDIO-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : [ "PROJECT_PORTAUDIO" ],
+		"name" : "PROJECT_PORTAUDIO"
+	}
+}

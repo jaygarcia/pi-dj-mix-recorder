@@ -1,0 +1,13 @@
+# Target labels
+ PROJECT_PORTAUDIO
+# Source files and their labels
+/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles/PROJECT_PORTAUDIO
+/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles/PROJECT_PORTAUDIO.rule
+/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles/PROJECT_PORTAUDIO-complete.rule
+/home/jgarcia/projects/djsr/dj_mix_recorder_clion/libs/portaudio/src/PROJECT_PORTAUDIO-stamp/PROJECT_PORTAUDIO-install.rule
+/home/jgarcia/projects/djsr/dj_mix_recorder_clion/libs/portaudio/src/PROJECT_PORTAUDIO-stamp/PROJECT_PORTAUDIO-mkdir.rule
+/home/jgarcia/projects/djsr/dj_mix_recorder_clion/libs/portaudio/src/PROJECT_PORTAUDIO-stamp/PROJECT_PORTAUDIO-download.rule
+/home/jgarcia/projects/djsr/dj_mix_recorder_clion/libs/portaudio/src/PROJECT_PORTAUDIO-stamp/PROJECT_PORTAUDIO-update.rule
+/home/jgarcia/projects/djsr/dj_mix_recorder_clion/libs/portaudio/src/PROJECT_PORTAUDIO-stamp/PROJECT_PORTAUDIO-patch.rule
+/home/jgarcia/projects/djsr/dj_mix_recorder_clion/libs/portaudio/src/PROJECT_PORTAUDIO-stamp/PROJECT_PORTAUDIO-configure.rule
+/home/jgarcia/projects/djsr/dj_mix_recorder_clion/libs/portaudio/src/PROJECT_PORTAUDIO-stamp/PROJECT_PORTAUDIO-build.rule

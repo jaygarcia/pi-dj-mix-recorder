@@ -1,0 +1,3 @@
+repository='git@git.assembla.com:portaudio.git'
+module=''
+tag=''
