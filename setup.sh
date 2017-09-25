@@ -6,6 +6,10 @@ sudo apt-get install \
 	libsndfile1-dev \
 	libalsaplayer-dev
 
+## The following is to install PortAudio library. As there is no
+## working portaudio lib version that includes portaudio.h. 
+## 
+## There has to be a way to do this within CMake.
 mkdir -p ./tmp/portaudio
 cd ./tmp/portaudio
 git clone git@github.com:jaygarcia/portaudio.git .
