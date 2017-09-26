@@ -54,10 +54,10 @@ RM = /home/jgarcia/Downloads/clion-2017.2.2/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jgarcia/projects/djsr/dj_mix_recorder_clion
+CMAKE_SOURCE_DIR = /home/jgarcia/projects/djsr/app
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jgarcia/projects/djsr/dj_mix_recorder_clion
+CMAKE_BINARY_DIR = /home/jgarcia/projects/djsr/app
 
 #=============================================================================
 # Target rules for target CMakeFiles/dj-mix-recorder.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/jgarcia/projects/djsr/dj_mix_recorder_clion
 CMakeFiles/dj-mix-recorder.dir/all:
 	$(MAKE) -f CMakeFiles/dj-mix-recorder.dir/build.make CMakeFiles/dj-mix-recorder.dir/depend
 	$(MAKE) -f CMakeFiles/dj-mix-recorder.dir/build.make CMakeFiles/dj-mix-recorder.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles --progress-num=1,2,3,4,5 "Built target dj-mix-recorder"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jgarcia/projects/djsr/app/CMakeFiles --progress-num=1,2,3,4 "Built target dj-mix-recorder"
 .PHONY : CMakeFiles/dj-mix-recorder.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/dj-mix-recorder.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dj-mix-recorder.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jgarcia/projects/djsr/app/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/dj-mix-recorder.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jgarcia/projects/djsr/app/CMakeFiles 0
 .PHONY : CMakeFiles/dj-mix-recorder.dir/rule
 
 # Convenience name for target.

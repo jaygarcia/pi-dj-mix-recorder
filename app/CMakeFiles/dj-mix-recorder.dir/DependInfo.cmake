@@ -4,10 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/jgarcia/projects/djsr/dj_mix_recorder_clion/APlay/APlay.c" "/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.o"
-  "/home/jgarcia/projects/djsr/dj_mix_recorder_clion/app/app.c" "/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles/dj-mix-recorder.dir/app/app.c.o"
-  "/home/jgarcia/projects/djsr/dj_mix_recorder_clion/main.c" "/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles/dj-mix-recorder.dir/main.c.o"
-  "/home/jgarcia/projects/djsr/dj_mix_recorder_clion/pa/PaPlay.c" "/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.o"
+  "/home/jgarcia/projects/djsr/app/app/app.c" "/home/jgarcia/projects/djsr/app/CMakeFiles/dj-mix-recorder.dir/app/app.c.o"
+  "/home/jgarcia/projects/djsr/app/main.c" "/home/jgarcia/projects/djsr/app/CMakeFiles/dj-mix-recorder.dir/main.c.o"
+  "/home/jgarcia/projects/djsr/app/pa/PaPlay.c" "/home/jgarcia/projects/djsr/app/CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

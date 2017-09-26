@@ -48,10 +48,10 @@ RM = /home/jgarcia/Downloads/clion-2017.2.2/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jgarcia/projects/djsr/dj_mix_recorder_clion
+CMAKE_SOURCE_DIR = /home/jgarcia/projects/djsr/app
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jgarcia/projects/djsr/dj_mix_recorder_clion
+CMAKE_BINARY_DIR = /home/jgarcia/projects/djsr/app
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles /home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jgarcia/projects/djsr/app/CMakeFiles /home/jgarcia/projects/djsr/app/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jgarcia/projects/djsr/app/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,33 +122,6 @@ dj-mix-recorder: cmake_check_build_system
 dj-mix-recorder/fast:
 	$(MAKE) -f CMakeFiles/dj-mix-recorder.dir/build.make CMakeFiles/dj-mix-recorder.dir/build
 .PHONY : dj-mix-recorder/fast
-
-APlay/APlay.o: APlay/APlay.c.o
-
-.PHONY : APlay/APlay.o
-
-# target to build an object file
-APlay/APlay.c.o:
-	$(MAKE) -f CMakeFiles/dj-mix-recorder.dir/build.make CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.o
-.PHONY : APlay/APlay.c.o
-
-APlay/APlay.i: APlay/APlay.c.i
-
-.PHONY : APlay/APlay.i
-
-# target to preprocess a source file
-APlay/APlay.c.i:
-	$(MAKE) -f CMakeFiles/dj-mix-recorder.dir/build.make CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.i
-.PHONY : APlay/APlay.c.i
-
-APlay/APlay.s: APlay/APlay.c.s
-
-.PHONY : APlay/APlay.s
-
-# target to generate assembly for a file
-APlay/APlay.c.s:
-	$(MAKE) -f CMakeFiles/dj-mix-recorder.dir/build.make CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.s
-.PHONY : APlay/APlay.c.s
 
 app/app.o: app/app.c.o
 
@@ -240,9 +213,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... dj-mix-recorder"
-	@echo "... APlay/APlay.o"
-	@echo "... APlay/APlay.i"
-	@echo "... APlay/APlay.s"
 	@echo "... app/app.o"
 	@echo "... app/app.i"
 	@echo "... app/app.s"

@@ -1,6 +1,6 @@
-/home/jgarcia/Downloads/clion-2017.2.2/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/jgarcia/projects/djsr/dj_mix_recorder_clion
+/home/jgarcia/Downloads/clion-2017.2.2/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/jgarcia/projects/djsr/app
 -- Checking for module 'sndfile'
 --   Found sndfile, version 1.0.27
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/jgarcia/projects/djsr/dj_mix_recorder_clion
+-- Build files have been written to: /home/jgarcia/projects/djsr/app

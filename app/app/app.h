@@ -15,8 +15,8 @@ extern "C" {
 #endif
     
 void layoutUI(GtkWidget *window);
-   
-void onGtkActivate();
+void onWindowDestroy();
+void onGtkActivate(GtkApplication* app, gpointer user_data);
 void appStart();
 
 

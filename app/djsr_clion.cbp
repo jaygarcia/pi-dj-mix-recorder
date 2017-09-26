@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/jgarcia/projects/djsr/dj_mix_recorder_clion"/>
+				<Option working_dir="/home/jgarcia/projects/djsr/app"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/jgarcia/projects/djsr/dj_mix_recorder_clion"/>
+				<Option working_dir="/home/jgarcia/projects/djsr/app"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/jgarcia/projects/djsr/dj_mix_recorder_clion"/>
+				<Option working_dir="/home/jgarcia/projects/djsr/app"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="dj-mix-recorder">
-				<Option output="/home/jgarcia/projects/djsr/dj_mix_recorder_clion/dj-mix-recorder" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jgarcia/projects/djsr/dj_mix_recorder_clion"/>
+				<Option output="/home/jgarcia/projects/djsr/app/dj-mix-recorder" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jgarcia/projects/djsr/app"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -74,15 +74,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 dj-mix-recorder"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 dj-mix-recorder"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="dj-mix-recorder/fast">
-				<Option output="/home/jgarcia/projects/djsr/dj_mix_recorder_clion/dj-mix-recorder" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jgarcia/projects/djsr/dj_mix_recorder_clion"/>
+				<Option output="/home/jgarcia/projects/djsr/app/dj-mix-recorder" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jgarcia/projects/djsr/app"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -117,47 +117,29 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 dj-mix-recorder/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/dj_mix_recorder_clion/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 dj-mix-recorder/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/jgarcia/projects/djsr/app/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/jgarcia/projects/djsr/dj_mix_recorder_clion/APlay/APlay.c">
+		<Unit filename="/home/jgarcia/projects/djsr/app/app/app.c">
 			<Option target="dj-mix-recorder"/>
 		</Unit>
-		<Unit filename="/home/jgarcia/projects/djsr/dj_mix_recorder_clion/APlay/APlay.h">
+		<Unit filename="/home/jgarcia/projects/djsr/app/app/app.h">
 			<Option target="dj-mix-recorder"/>
 		</Unit>
-		<Unit filename="/home/jgarcia/projects/djsr/dj_mix_recorder_clion/APlay/aconfig.h">
+		<Unit filename="/home/jgarcia/projects/djsr/app/main.c">
 			<Option target="dj-mix-recorder"/>
 		</Unit>
-		<Unit filename="/home/jgarcia/projects/djsr/dj_mix_recorder_clion/APlay/formats.h">
+		<Unit filename="/home/jgarcia/projects/djsr/app/pa/PaPlay.c">
 			<Option target="dj-mix-recorder"/>
 		</Unit>
-		<Unit filename="/home/jgarcia/projects/djsr/dj_mix_recorder_clion/APlay/gettext.h">
+		<Unit filename="/home/jgarcia/projects/djsr/app/pa/PaPlay.h">
 			<Option target="dj-mix-recorder"/>
 		</Unit>
-		<Unit filename="/home/jgarcia/projects/djsr/dj_mix_recorder_clion/app/app.c">
-			<Option target="dj-mix-recorder"/>
-		</Unit>
-		<Unit filename="/home/jgarcia/projects/djsr/dj_mix_recorder_clion/app/app.h">
-			<Option target="dj-mix-recorder"/>
-		</Unit>
-		<Unit filename="/home/jgarcia/projects/djsr/dj_mix_recorder_clion/main.c">
-			<Option target="dj-mix-recorder"/>
-		</Unit>
-		<Unit filename="/home/jgarcia/projects/djsr/dj_mix_recorder_clion/pa/PaPlay.c">
-			<Option target="dj-mix-recorder"/>
-		</Unit>
-		<Unit filename="/home/jgarcia/projects/djsr/dj_mix_recorder_clion/pa/PaPlay.h">
-			<Option target="dj-mix-recorder"/>
-		</Unit>
-		<Unit filename="/home/jgarcia/projects/djsr/dj_mix_recorder_clion/pa/portaudio.h">
-			<Option target="dj-mix-recorder"/>
-		</Unit>
-		<Unit filename="/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeLists.txt">
+		<Unit filename="/home/jgarcia/projects/djsr/app/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

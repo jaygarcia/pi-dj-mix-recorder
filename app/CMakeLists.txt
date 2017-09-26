@@ -51,10 +51,10 @@ link_directories(${ALSA_LIBRARY_DIRS})
 add_definitions(${ALSA_CFLAGS_OTHER})
 
 #LibSoundFile
-pkg_check_modules(LIBASNDFILE sndfile)
-include_directories(${LIBASNDFILE_INCLUDE_DIRS})
-link_directories(${LIBASNDFILE_LIBRARY_DIRS})
-add_definitions(${LIBASNDFILE_CFLAGS_OTHER})
+pkg_check_modules(LIBSNDFILE sndfile)
+include_directories(${LIBSNDFILE_INCLUDE_DIRS})
+link_directories(${LIBSNDFILE_LIBRARY_DIRS})
+add_definitions(${LIBSNDFILE_CFLAGS_OTHER})
 
 
 #PortAudio
@@ -64,8 +64,8 @@ add_definitions(${LIBASNDFILE_CFLAGS_OTHER})
 #add_definitions(${PORTAUDIO_CFLAGS_OTHER})
 
 
-set(SOURCE_FILES main.c APlay/APlay.c APlay/APlay.h APlay/aconfig.h APlay/formats.h APlay/gettext.h app/app.c app/app.h pa/PaPlay.c pa/PaPlay.h pa/portaudio.h)
+set(SOURCE_FILES main.c app/app.c app/app.h pa/PaPlay.c pa/PaPlay.h)
 add_executable(dj-mix-recorder ${SOURCE_FILES})
 
 #Link the libraries
-target_link_libraries(dj-mix-recorder ${GTK3_LIBRARIES} ${ALSA_LIBRARIES} ${CMAKE_THREADS_LIBS_INIT} ${LIBSNDFILE_LIBRARIES} libportaudio)
+target_link_libraries(dj-mix-recorder ${GTK3_LIBRARIES} ${ALSA_LIBRARIES} ${CMAKE_THREADS_LIBS_INIT} ${LIBSNDFILE_LIBRARIES} portaudio)

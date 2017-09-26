@@ -5,7 +5,14 @@
 #ifndef DJSR_CLION_PAPLAY_H
 #define DJSR_CLION_PAPLAY_H
 
-int playFile(char * fileName);
+void stopAudio();
+void *  audioPlayback(void *ptr);
+void preparePortAudio();
+
+
+void openFile(char* fileNameToPlay);
+void playTrack();
+void cleanup();
 
 #endif //DJSR_CLION_PAPLAY_H
 

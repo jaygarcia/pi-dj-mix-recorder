@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.20.0 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkApplicationWindow">
+    <property name="can_focus">False</property>
+    <child>
+      <object class="GtkLayout" id="app_window">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="has_focus">True</property>
+        <property name="is_focus">True</property>
+        <child>
+          <object class="GtkButton" id="open-button">
+            <property name="label">gtk-open</property>
+            <property name="width_request">100</property>
+            <property name="height_request">80</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="use_stock">True</property>
+          </object>
+          <packing>
+            <property name="x">48</property>
+            <property name="y">77</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="play-button">
+            <property name="label">gtk-media-play</property>
+            <property name="width_request">100</property>
+            <property name="height_request">80</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="use_stock">True</property>
+          </object>
+          <packing>
+            <property name="x">184</property>
+            <property name="y">79</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="stop-button">
+            <property name="label">gtk-media-stop</property>
+            <property name="width_request">100</property>
+            <property name="height_request">80</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="use_stock">True</property>
+          </object>
+          <packing>
+            <property name="x">311</property>
+            <property name="y">79</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

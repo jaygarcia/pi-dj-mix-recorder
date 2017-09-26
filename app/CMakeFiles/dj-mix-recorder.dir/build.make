@@ -43,10 +43,10 @@ RM = /home/jgarcia/Downloads/clion-2017.2.2/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jgarcia/projects/djsr/dj_mix_recorder_clion
+CMAKE_SOURCE_DIR = /home/jgarcia/projects/djsr/app
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jgarcia/projects/djsr/dj_mix_recorder_clion
+CMAKE_BINARY_DIR = /home/jgarcia/projects/djsr/app
 
 # Include any dependencies generated for this target.
 include CMakeFiles/dj-mix-recorder.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/dj-mix-recorder.dir/flags.make
 
 CMakeFiles/dj-mix-recorder.dir/main.c.o: CMakeFiles/dj-mix-recorder.dir/flags.make
 CMakeFiles/dj-mix-recorder.dir/main.c.o: main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/dj-mix-recorder.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dj-mix-recorder.dir/main.c.o   -c /home/jgarcia/projects/djsr/dj_mix_recorder_clion/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jgarcia/projects/djsr/app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/dj-mix-recorder.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dj-mix-recorder.dir/main.c.o   -c /home/jgarcia/projects/djsr/app/main.c
 
 CMakeFiles/dj-mix-recorder.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dj-mix-recorder.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jgarcia/projects/djsr/dj_mix_recorder_clion/main.c > CMakeFiles/dj-mix-recorder.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jgarcia/projects/djsr/app/main.c > CMakeFiles/dj-mix-recorder.dir/main.c.i
 
 CMakeFiles/dj-mix-recorder.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dj-mix-recorder.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jgarcia/projects/djsr/dj_mix_recorder_clion/main.c -o CMakeFiles/dj-mix-recorder.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jgarcia/projects/djsr/app/main.c -o CMakeFiles/dj-mix-recorder.dir/main.c.s
 
 CMakeFiles/dj-mix-recorder.dir/main.c.o.requires:
 
@@ -81,42 +81,18 @@ CMakeFiles/dj-mix-recorder.dir/main.c.o.provides: CMakeFiles/dj-mix-recorder.dir
 CMakeFiles/dj-mix-recorder.dir/main.c.o.provides.build: CMakeFiles/dj-mix-recorder.dir/main.c.o
 
 
-CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.o: CMakeFiles/dj-mix-recorder.dir/flags.make
-CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.o: APlay/APlay.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.o   -c /home/jgarcia/projects/djsr/dj_mix_recorder_clion/APlay/APlay.c
-
-CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jgarcia/projects/djsr/dj_mix_recorder_clion/APlay/APlay.c > CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.i
-
-CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jgarcia/projects/djsr/dj_mix_recorder_clion/APlay/APlay.c -o CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.s
-
-CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.o.requires:
-
-.PHONY : CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.o.requires
-
-CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.o.provides: CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.o.requires
-	$(MAKE) -f CMakeFiles/dj-mix-recorder.dir/build.make CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.o.provides.build
-.PHONY : CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.o.provides
-
-CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.o.provides.build: CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.o
-
-
 CMakeFiles/dj-mix-recorder.dir/app/app.c.o: CMakeFiles/dj-mix-recorder.dir/flags.make
 CMakeFiles/dj-mix-recorder.dir/app/app.c.o: app/app.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/dj-mix-recorder.dir/app/app.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dj-mix-recorder.dir/app/app.c.o   -c /home/jgarcia/projects/djsr/dj_mix_recorder_clion/app/app.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jgarcia/projects/djsr/app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/dj-mix-recorder.dir/app/app.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dj-mix-recorder.dir/app/app.c.o   -c /home/jgarcia/projects/djsr/app/app/app.c
 
 CMakeFiles/dj-mix-recorder.dir/app/app.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dj-mix-recorder.dir/app/app.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jgarcia/projects/djsr/dj_mix_recorder_clion/app/app.c > CMakeFiles/dj-mix-recorder.dir/app/app.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jgarcia/projects/djsr/app/app/app.c > CMakeFiles/dj-mix-recorder.dir/app/app.c.i
 
 CMakeFiles/dj-mix-recorder.dir/app/app.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dj-mix-recorder.dir/app/app.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jgarcia/projects/djsr/dj_mix_recorder_clion/app/app.c -o CMakeFiles/dj-mix-recorder.dir/app/app.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jgarcia/projects/djsr/app/app/app.c -o CMakeFiles/dj-mix-recorder.dir/app/app.c.s
 
 CMakeFiles/dj-mix-recorder.dir/app/app.c.o.requires:
 
@@ -131,16 +107,16 @@ CMakeFiles/dj-mix-recorder.dir/app/app.c.o.provides.build: CMakeFiles/dj-mix-rec
 
 CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.o: CMakeFiles/dj-mix-recorder.dir/flags.make
 CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.o: pa/PaPlay.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.o   -c /home/jgarcia/projects/djsr/dj_mix_recorder_clion/pa/PaPlay.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jgarcia/projects/djsr/app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.o   -c /home/jgarcia/projects/djsr/app/pa/PaPlay.c
 
 CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jgarcia/projects/djsr/dj_mix_recorder_clion/pa/PaPlay.c > CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/jgarcia/projects/djsr/app/pa/PaPlay.c > CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.i
 
 CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jgarcia/projects/djsr/dj_mix_recorder_clion/pa/PaPlay.c -o CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/jgarcia/projects/djsr/app/pa/PaPlay.c -o CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.s
 
 CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.o.requires:
 
@@ -156,7 +132,6 @@ CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.o.provides.build: CMakeFiles/dj-mix-r
 # Object files for target dj-mix-recorder
 dj__mix__recorder_OBJECTS = \
 "CMakeFiles/dj-mix-recorder.dir/main.c.o" \
-"CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.o" \
 "CMakeFiles/dj-mix-recorder.dir/app/app.c.o" \
 "CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.o"
 
@@ -164,12 +139,11 @@ dj__mix__recorder_OBJECTS = \
 dj__mix__recorder_EXTERNAL_OBJECTS =
 
 dj-mix-recorder: CMakeFiles/dj-mix-recorder.dir/main.c.o
-dj-mix-recorder: CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.o
 dj-mix-recorder: CMakeFiles/dj-mix-recorder.dir/app/app.c.o
 dj-mix-recorder: CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.o
 dj-mix-recorder: CMakeFiles/dj-mix-recorder.dir/build.make
 dj-mix-recorder: CMakeFiles/dj-mix-recorder.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable dj-mix-recorder"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jgarcia/projects/djsr/app/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable dj-mix-recorder"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/dj-mix-recorder.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -178,7 +152,6 @@ CMakeFiles/dj-mix-recorder.dir/build: dj-mix-recorder
 .PHONY : CMakeFiles/dj-mix-recorder.dir/build
 
 CMakeFiles/dj-mix-recorder.dir/requires: CMakeFiles/dj-mix-recorder.dir/main.c.o.requires
-CMakeFiles/dj-mix-recorder.dir/requires: CMakeFiles/dj-mix-recorder.dir/APlay/APlay.c.o.requires
 CMakeFiles/dj-mix-recorder.dir/requires: CMakeFiles/dj-mix-recorder.dir/app/app.c.o.requires
 CMakeFiles/dj-mix-recorder.dir/requires: CMakeFiles/dj-mix-recorder.dir/pa/PaPlay.c.o.requires
 
@@ -189,6 +162,6 @@ CMakeFiles/dj-mix-recorder.dir/clean:
 .PHONY : CMakeFiles/dj-mix-recorder.dir/clean
 
 CMakeFiles/dj-mix-recorder.dir/depend:
-	cd /home/jgarcia/projects/djsr/dj_mix_recorder_clion && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jgarcia/projects/djsr/dj_mix_recorder_clion /home/jgarcia/projects/djsr/dj_mix_recorder_clion /home/jgarcia/projects/djsr/dj_mix_recorder_clion /home/jgarcia/projects/djsr/dj_mix_recorder_clion /home/jgarcia/projects/djsr/dj_mix_recorder_clion/CMakeFiles/dj-mix-recorder.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jgarcia/projects/djsr/app && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jgarcia/projects/djsr/app /home/jgarcia/projects/djsr/app /home/jgarcia/projects/djsr/app /home/jgarcia/projects/djsr/app /home/jgarcia/projects/djsr/app/CMakeFiles/dj-mix-recorder.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/dj-mix-recorder.dir/depend
 
