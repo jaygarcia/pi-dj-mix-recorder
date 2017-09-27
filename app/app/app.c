@@ -3,7 +3,7 @@
 #include "../pa/PaPlay.h"
 #include <sys/time.h>
 
-void * playAudio(gpointer data) {
+void * playAudioThreadFn(gpointer data) {
     playTrack();
 }
 
@@ -11,7 +11,7 @@ void onPlayPress(GtkWidget *button, gpointer data) {
     puts("Pressed play!***");
     fflush(stdout);
 
-    GThread *thread = g_thread_new("audio_player", &playAudio, NULL);
+    GThread *thread = g_thread_new("audio_player", &playAudioThreadFn, NULL);
 
     g_thread_unref(thread);
 }
@@ -22,15 +22,7 @@ void onStopPress(GtkWidget *stopButton, gpointer data) {
     stopAudio();
 }
 
-
-void * openAFile(gpointer data) {
-
-}
-
-void onOpenPress(GtkWidget *openButton, gpointer data) {
-    puts("Open pressed");
-    fflush(stdout);
-
+void * openThreadFn( gpointer data) {
     struct timespec start, end;
 
     clock_gettime(CLOCK_MONOTONIC_RAW, &start);
@@ -43,24 +35,48 @@ void onOpenPress(GtkWidget *openButton, gpointer data) {
     printf("Time to open file %ld\n", delta);
 }
 
+void onOpenPress(GtkWidget *openButton, gpointer data) {
+    puts("Pressed OPEN");
+    fflush(stdout);
+
+
+    GThread *thread = g_thread_new("audio_opener", &openThreadFn, NULL);
+    g_thread_unref(thread);
+}
+
+
+void * pauseAudioThreadFn(gpointer data) {
+    pauseAudio();
+}
+
+void onPausePress(GtkWidget *pauseButton, gpointer data) {
+    puts("Pressed Pause");
+    fflush(stdout);
+
+    GThread *thread = g_thread_new("audio_pauser", &pauseAudioThreadFn, NULL);
+    g_thread_unref(thread);
+}
 
 void layoutUI(GtkWidget *window) {
     
-    GtkWidget *button_box = gtk_button_box_new(GTK_ORIENTATION_HORIZONTAL),
-              *dmmyButton = gtk_button_new_with_label("WTF"),
-              *openButton = gtk_button_new_with_label("Open"),
-              *playButton = gtk_button_new_with_label("Play"),
-              *stopButton = gtk_button_new_with_label("STOP");
+    GtkWidget *button_box  = gtk_button_box_new(GTK_ORIENTATION_VERTICAL),
+              *dmmyButton  = gtk_button_new_with_label(" "),
+              *openButton  = gtk_button_new_with_label("Open"),
+              *playButton  = gtk_button_new_with_label("Play"),
+              *pauseButton = gtk_button_new_with_label("Pause"),
+              *stopButton  = gtk_button_new_with_label("STOP");
 
 
     g_signal_connect(playButton, "pressed", G_CALLBACK(onPlayPress), NULL);
     g_signal_connect(stopButton, "pressed", G_CALLBACK(onStopPress), NULL);
     g_signal_connect(openButton, "pressed", G_CALLBACK(onOpenPress), NULL);
+    g_signal_connect(pauseButton, "pressed", G_CALLBACK(onPausePress), NULL);
 
 
     gtk_container_add(GTK_CONTAINER(button_box), dmmyButton);
     gtk_container_add(GTK_CONTAINER(button_box), openButton);
     gtk_container_add(GTK_CONTAINER(button_box), playButton);
+    gtk_container_add(GTK_CONTAINER(button_box), pauseButton);
     gtk_container_add(GTK_CONTAINER(button_box), stopButton);
 
     gtk_container_add(GTK_CONTAINER(window), button_box);
@@ -89,6 +105,8 @@ void onGtkActivate(GtkApplication* app, gpointer user_data) {
 
     
     g_signal_connect(window, "destroy",  G_CALLBACK(onWindowDestroy), NULL);
+
+    onOpenPress(NULL, NULL);
 }
 
 void onWindowDestroy() {

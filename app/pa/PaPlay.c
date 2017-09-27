@@ -9,7 +9,7 @@
 
 #define PA_ENABLE_DEBUG_OUTPUT 1
 
-#include <string.h>
+#include <memory.h>
 #include <stdio.h>
 #include <sndfile.h>
 #include <signal.h>
@@ -17,6 +17,7 @@
 #include <malloc.h>
 #include <stdlib.h>
 #include <portaudio.h>
+#include <stdbool.h>
 #include <pa_linux_alsa.h>
 #include <unistd.h>
 #include <sys/time.h>
@@ -26,64 +27,110 @@ SF_INFO sfinfo ;
 PaStream *stream;
 PaStreamParameters outputParameters;
 pthread_mutex_t operationMutex;
+int fileByteRate;
 /* To be locked via mutex */
-char* fileName;
-short isPlaying = 0; // 1 = yes, 0 = no;
 
 
+#define STOPPED 0
+#define PLAYING 1
+#define PAUSED  2
 
-void stopAudio() {
+struct PlayerState {
+    char *fileName;
+    bool fileLoaded;
+    bool portAudioInitialized;
+    bool fileLoading;
+    /**
+     * 0    Stopped
+     * 1    Playing
+     * 2    Paused
+     */
+    short state;
+} PlayerState;
+
+void setPlayerStateUsingMutex(short newState) {
     pthread_mutex_lock(&operationMutex);
-    isPlaying = 0;
+
+    PlayerState.state = newState;
+
     pthread_mutex_unlock(&operationMutex);
 }
 
+short getPlayerStateUsingMutex() {
+    pthread_mutex_lock(&operationMutex);
+    short state = PlayerState.state;
+    pthread_mutex_unlock(&operationMutex);
+    return state;
+}
 
 void openFile(char* fileNameToOpen) {
 
     /** LOCK **/
     pthread_mutex_lock(&operationMutex);
-    free(fileName);
-    realloc(fileName, sizeof(char) * strlen(fileNameToOpen));
-    fileName = strdup(fileNameToOpen);
+
+    PlayerState.fileLoading = true;
+    free(PlayerState.fileName);
+    realloc(PlayerState.fileName, sizeof(char) * strlen(fileNameToOpen));
+    PlayerState.fileName = strdup(fileNameToOpen);
+
     /** UNLOCK **/
     pthread_mutex_unlock(&operationMutex);
 
     /* Open file. Because this is just a example we asume
         What you are doing and give file first argument */
-    if (! (infile = sf_open(fileName, SFM_READ, &sfinfo))) {
-        printf("Not able to open input file %s.\n", fileNameToOpen) ;
+    if (! (infile = sf_open(fileNameToOpen, SFM_READ, &sfinfo))) {
+        puts(("Not able to open input file %s.\n", fileNameToOpen));
         sf_perror(NULL) ;
         return ;
     }
-    else {
-        printf("Opened file %s.\n", fileNameToOpen);
-    }
+
+
+
+
 
     preparePortAudio();
+
+    pthread_mutex_lock(&operationMutex);
+    PlayerState.fileLoaded = true;
+    PlayerState.fileLoading = false;
+    pthread_mutex_unlock(&operationMutex);
+
+    puts(("Opened file %s.\n", fileNameToOpen));
+    printf("\n\nfileByteRate 0x%08X \n", sfinfo.format | SF_FORMAT_WAV);
+
 }
 
 void playTrack() {
-    if (isPlaying == 1)  {
-        printf("Sorry Jack! Already playing %s\n", fileName);
+    short state = getPlayerStateUsingMutex();
+
+    if (PlayerState.fileLoading == true) {
+        puts("File still loading. Aborting!");
         return;
     }
 
-    if (fileName == NULL) {
+    if (state == PLAYING)  {
+        puts(("Sorry Jack! Already playing %s", PlayerState.fileName));
+        return;
+    }
+
+    if (state == PAUSED) {
+        puts("Resuming");
+        setPlayerStateUsingMutex(PLAYING);
+        return;
+    }
+
+    if (PlayerState.fileLoaded == false) {
+        puts("No file is loaded!");
+        return;
+    }
+
+    if (PlayerState.fileName == NULL) {
         puts("No file is open!!");
         return;
     }
 
-    pthread_mutex_lock(&operationMutex);
-
-    isPlaying = 1;
-
-    pthread_mutex_unlock(&operationMutex);
+    setPlayerStateUsingMutex(PLAYING);
     audioPlayback(NULL);
-
-
-//    pthread_t playThread;
-//    pthread_create(&playThread, NULL, audioPlayback, NULL);
 }
 
 
@@ -95,21 +142,25 @@ static int streamCallback(const void *inputBuffer,
                           PaStreamCallbackFlags statusFlags,
                           void *userData) {
 
-    pthread_mutex_lock(&operationMutex);
-    short playing = isPlaying;
-    pthread_mutex_unlock(&operationMutex);
-
-    if (playing == 0) {
-        return paComplete;
-    }
+    short state = getPlayerStateUsingMutex();
 
     float *out = (float*)outputBuffer;
     long readcount = 0;
 
-    memset(out, 0x00, framesPerBuffer);
+    // TODO: Hard coding 4 is BAD! Need to figure out how to programmatically get
+
+    memset(out, 0x00, framesPerBuffer * sfinfo.channels * 4);
+
+    // Allow the buffer to stay silent when paused
+    if (state == PAUSED) {
+        printf("Paused\n");
+        return paContinue;
+    }
 
     /* Read with libsndfile */
     readcount = sf_read_float(infile, out, framesPerBuffer * 2);
+
+    printf("read %lu bytes from %s\n", readcount, PlayerState.fileName);
 
     /* File end if we read -1 */
     if (readcount <= 0) {
@@ -142,6 +193,7 @@ void * audioPlayback(void *ptr) {
             infile);
 
     if (retval != paNoError) {
+        puts("Could not open stream, executing cleanup()");
         goto exit;
     }
     else {
@@ -149,15 +201,13 @@ void * audioPlayback(void *ptr) {
         fflush(stdout);
     }
 
-
     retval = Pa_StartStream(stream);
     if (retval != paNoError) {
-        cleanup();
+        goto exit;
     }
-    puts("end of audioPlayback");
 
     if (retval == paNoError) {
-        return;
+        return NULL;
     }
 
 
@@ -169,7 +219,7 @@ exit:
 
 void preparePortAudio() {
     stream = NULL;
-    PaError retval = 0;
+    PaError retval;
     struct sigaction sa;
 
     sa.sa_flags = SA_SIGINFO;
@@ -189,34 +239,35 @@ void preparePortAudio() {
     }
 
 
-    puts("Pa_Initialize()");
-    fflush(stdout);
-    retval = Pa_Initialize();
-    puts("END Pa_Initialize()");
-    fflush(stdout);
+    if (! PlayerState.portAudioInitialized) {
+        retval = Pa_Initialize();
 
-    if (retval != paNoError) {
-        printf("Could not initialize PortAudio!\n");
-        goto exit;
+        if (retval != paNoError) {
+            printf("Could not initialize PortAudio!\n");
+            goto exit;
+        }
+
+        pthread_mutex_lock(&operationMutex);
+        PlayerState.portAudioInitialized = true;
+        pthread_mutex_unlock(&operationMutex);
+
+        outputParameters.device = Pa_GetDefaultOutputDevice(); /* default output device */
+
+        if (outputParameters.device == paNoDevice) {
+            fprintf(stderr, "Error: No default output device.\n");
+            goto exit;
+        }
+
+        outputParameters.channelCount = 2;       /* stereo output */
+        outputParameters.sampleFormat = paFloat32; /* 32 bit floating point output */
+        outputParameters.suggestedLatency = Pa_GetDeviceInfo(outputParameters.device)->defaultLowOutputLatency;
+        outputParameters.hostApiSpecificStreamInfo = NULL;
+
+        puts("Port Audio initialized. Ready for playback!");
+        return;
+
     }
-
-    puts("Pa_GetDefaultOutputDevice()");
-    fflush(stdout);
-    outputParameters.device = Pa_GetDefaultOutputDevice(); /* default output device */
-
-    puts("END Pa_GetDefaultOutputDevice();");
-    fflush(stdout);
-    if (outputParameters.device == paNoDevice) {
-        fprintf(stderr, "Error: No default output device.\n");
-        goto exit;
-    }
-
-    outputParameters.channelCount = 2;       /* stereo output */
-    outputParameters.sampleFormat = paFloat32; /* 32 bit floating point output */
-    outputParameters.suggestedLatency = Pa_GetDeviceInfo(outputParameters.device)->defaultLowOutputLatency;
-    outputParameters.hostApiSpecificStreamInfo = NULL;
-
-    if (retval == paNoError) {
+    else {
         return;
     }
 
@@ -225,7 +276,21 @@ exit:
     cleanup();
 }
 
+
+
+void stopAudio() {
+    setPlayerStateUsingMutex(STOPPED);
+    Pa_StopStream(stream);
+}
+
+void pauseAudio() {
+    setPlayerStateUsingMutex(PAUSED);
+}
+
+
 void cleanup() {
+    puts("Cleanup started...");
+
     PaError retval;
 
     retval = Pa_StopStream(stream);
@@ -239,17 +304,17 @@ void cleanup() {
         goto exit;
     }
 
-    Pa_Terminate();
 
-
-    exit:
+exit:
     /* clean up and disconnect */
-    printf("\nExit and clean\n");
-    sf_close(infile);
+    puts("Terminating PortAudio session");
     Pa_Terminate();
+    Pa_Sleep(40);
 
-    isPlaying = 0;
-    printf("Cleanup done...\n");
+    sf_close(infile);
+
+    setPlayerStateUsingMutex(STOPPED);
+    puts("Cleanup done...");
 
 }
 

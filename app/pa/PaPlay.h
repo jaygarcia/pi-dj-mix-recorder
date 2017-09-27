@@ -6,6 +6,7 @@
 #define DJSR_CLION_PAPLAY_H
 
 void stopAudio();
+void pauseAudio();
 void *  audioPlayback(void *ptr);
 void preparePortAudio();
 
