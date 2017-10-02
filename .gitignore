@@ -3,5 +3,7 @@ app/CMakeFiles/
 app/.idea/
 app/CMakeCache.txt
 app/cmake_install.cmake
+app/Makefile
+
 
 tmp/
