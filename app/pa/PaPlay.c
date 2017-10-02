@@ -242,10 +242,26 @@ double getCurrentTimeStamp() {
 
 }
 
+int findUsbAudio() {
+    int numDevices = Pa_GetDeviceCount(),
+        i = 0;
+
+    const PaDeviceInfo *deviceInfo;
+
+    for (; i < numDevices; i++) {
+        deviceInfo = Pa_GetDeviceInfo(i);
+        printf("Device %i -> %s\n", i, deviceInfo->name);
+
+    }
+
+    return 0;
+}
+
 void preparePortAudio() {
     stream = NULL;
     PaError retval;
     struct sigaction sa;
+
 
     sa.sa_flags = SA_SIGINFO;
     sigemptyset(&sa.sa_mask);
@@ -284,6 +300,9 @@ void preparePortAudio() {
             fprintf(stderr, "Error: No default output device.\n");
             goto exit;
         }
+
+        int usbAudioDeviceIndex = findUsbAudio();
+
 
         outputParameters.channelCount = 2;       /* stereo output */
         outputParameters.sampleFormat = paFloat32; /* 32 bit floating point output */

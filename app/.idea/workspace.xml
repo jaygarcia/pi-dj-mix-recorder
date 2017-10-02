@@ -28,10 +28,11 @@
           <file leaf-file-name="app.c" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/app.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="778">
-                  <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+                <state relative-caret-position="630">
+                  <caret line="34" column="14" lean-forward="false" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
                   <folding>
                     <element signature="e#0#16#0" expanded="true" />
+                    <element signature="e#78#138#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -51,26 +52,16 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="PaPlay.c" pinned="false" current-in-tab="false">
+          <file leaf-file-name="PaPlay.c" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pa/PaPlay.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="891">
-                  <caret line="148" column="0" lean-forward="true" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
+                <state relative-caret-position="1359">
+                  <caret line="304" column="0" lean-forward="true" selection-start-line="304" selection-start-column="0" selection-end-line="304" selection-end-column="0" />
                   <folding>
                     <element signature="e#151#170#0" expanded="true" />
-                    <element signature="e#7329#7415#0" expanded="false" />
-                    <element signature="e#7417#7529#0" expanded="false" />
+                    <element signature="e#7657#7743#0" expanded="false" />
+                    <element signature="e#7745#7857#0" expanded="false" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="dj-mix-recorder (disassembly)" pinned="false" current-in-tab="true">
-            <entry file="mock:///dj-mix-recorder (disassembly)">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -78,8 +69,8 @@
           <file leaf-file-name="portaudio.h" pinned="false" current-in-tab="false">
             <entry file="file:///usr/local/include/portaudio.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="561">
-                  <caret line="182" column="13" lean-forward="true" selection-start-line="182" selection-start-column="13" selection-end-line="182" selection-end-column="13" />
+                <state relative-caret-position="1083">
+                  <caret line="516" column="2" lean-forward="false" selection-start-line="516" selection-start-column="2" selection-end-line="516" selection-end-column="2" />
                   <folding />
                 </state>
               </provider>
@@ -91,10 +82,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>stream</find>
-      <find>playTrack</find>
-      <find>audioPlayback</find>
-      <find>audioPlay</find>
       <find>outputParameters</find>
       <find>isPlaying == 1</find>
       <find>fileName</find>
@@ -121,6 +108,10 @@
       <find>istream</find>
       <find>isStream</find>
       <find>getCurrentTimeStamp</find>
+      <find>.wav</find>
+      <find>_TO_PLAY</find>
+      <find>prepar</find>
+      <find>prepare</find>
     </findStrings>
     <replaceStrings>
       <replace>if (</replace>
@@ -298,12 +289,12 @@
       <workItem from="1506952197562" duration="160000" />
       <workItem from="1506952406152" duration="131000" />
       <workItem from="1506952837563" duration="3582000" />
-      <workItem from="1506956629233" duration="1347000" />
+      <workItem from="1506956629233" duration="2569000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65320000" />
+    <option name="totallyTimeSpent" value="66542000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -348,7 +339,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="21" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/pa/PaPlay.c</url>
+          <line>248</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="22" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -380,6 +378,7 @@
           <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#78#138#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -397,6 +396,7 @@
           <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#78#138#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -414,6 +414,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#78#138#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -431,6 +432,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#78#138#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -448,6 +450,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#78#138#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -465,6 +468,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#78#138#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -690,32 +694,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/include/portaudio.h">
+    <entry file="file://$PROJECT_DIR$/app/app.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="182" column="13" lean-forward="true" selection-start-line="182" selection-start-column="13" selection-end-line="182" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="630">
+          <caret line="34" column="14" lean-forward="false" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#78#138#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.c">
+    <entry file="file:///usr/local/include/portaudio.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="778">
-          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1083">
+          <caret line="516" column="2" lean-forward="false" selection-start-line="516" selection-start-column="2" selection-end-line="516" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pa/PaPlay.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="891">
-          <caret line="148" column="0" lean-forward="true" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
+        <state relative-caret-position="1359">
+          <caret line="304" column="0" lean-forward="true" selection-start-line="304" selection-start-column="0" selection-end-line="304" selection-end-column="0" />
           <folding>
             <element signature="e#151#170#0" expanded="true" />
-            <element signature="e#7329#7415#0" expanded="false" />
-            <element signature="e#7417#7529#0" expanded="false" />
+            <element signature="e#7657#7743#0" expanded="false" />
+            <element signature="e#7745#7857#0" expanded="false" />
           </folding>
         </state>
       </provider>

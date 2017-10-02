@@ -3,7 +3,11 @@
 #include "../pa/PaPlay.h"
 #include <sys/time.h>
 
-
+#ifdef RPI
+char *TEST_SONG_TO_PLAY = "/home/pi/projects/djsr/song.wav";
+#else
+char *TEST_SONG_TO_PLAY = "/home/jgarcia/projects/djsr/song.wav";
+#endif
 
 void * playAudioThreadFn(gpointer data) {
     playTrack();
@@ -51,7 +55,7 @@ void * openThreadFn( gpointer data) {
 
     clock_gettime(CLOCK_MONOTONIC_RAW, &start);
 
-    openFile("/home/jgarcia/projects/djsr/song.wav");
+    openFile(TEST_SONG_TO_PLAY);
 
     clock_gettime(CLOCK_MONOTONIC_RAW, &end);
     u_int64_t delta = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_nsec - start.tv_nsec) / 1000;
