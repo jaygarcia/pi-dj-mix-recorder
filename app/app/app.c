@@ -3,8 +3,29 @@
 #include "../pa/PaPlay.h"
 #include <sys/time.h>
 
+
+
 void * playAudioThreadFn(gpointer data) {
     playTrack();
+}
+
+
+void * displayTimestampThreadFn(gpointer data) {
+    short status = 1;
+
+    double timestamp;
+    while(status == 1)  {
+
+        timestamp = getCurrentTimeStamp();
+        printf("TIMESTAMP :: %lf\n", timestamp);
+        fflush(stdout);
+
+        sleep(1);
+        status = getPlaybackStatus();
+
+    }
+
+    printf("EXITING THREAD!!!\n");
 }
 
 void onPlayPress(GtkWidget *button, gpointer data) {
@@ -12,8 +33,11 @@ void onPlayPress(GtkWidget *button, gpointer data) {
     fflush(stdout);
 
     GThread *thread = g_thread_new("audio_player", &playAudioThreadFn, NULL);
-
     g_thread_unref(thread);
+
+
+    GThread *tsThread = g_thread_new("audio_timestamp", &displayTimestampThreadFn, NULL);
+    g_thread_unref(tsThread);
 }
 
 void onStopPress(GtkWidget *stopButton, gpointer data) {
@@ -89,7 +113,7 @@ void onGtkActivate(GtkApplication* app, gpointer user_data) {
     
 //    GtkWidget *window = gtk_application_window_new(app);
     GtkWidget *window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-    gtk_window_set_application(window, app);
+    gtk_window_set_application(GTK_WINDOW(window), app);
 
 
     gtk_window_set_title(GTK_WINDOW(window), "DJ Mix Recorder");

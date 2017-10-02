@@ -26,7 +26,11 @@ SNDFILE *infile;
 SF_INFO sfinfo ;
 PaStream *stream;
 PaStreamParameters outputParameters;
-pthread_mutex_t operationMutex;
+pthread_mutex_t pausePlayStopMutex,
+                timestampMutex;
+
+double currentTimeStamp;
+
 int fileByteRate;
 /* To be locked via mutex */
 
@@ -49,24 +53,24 @@ struct PlayerState {
 } PlayerState;
 
 void setPlayerStateUsingMutex(short newState) {
-    pthread_mutex_lock(&operationMutex);
+    pthread_mutex_lock(&pausePlayStopMutex);
 
     PlayerState.state = newState;
 
-    pthread_mutex_unlock(&operationMutex);
+    pthread_mutex_unlock(&pausePlayStopMutex);
 }
 
 short getPlayerStateUsingMutex() {
-    pthread_mutex_lock(&operationMutex);
+    pthread_mutex_lock(&pausePlayStopMutex);
     short state = PlayerState.state;
-    pthread_mutex_unlock(&operationMutex);
+    pthread_mutex_unlock(&pausePlayStopMutex);
     return state;
 }
 
 void openFile(char* fileNameToOpen) {
 
     /** LOCK **/
-    pthread_mutex_lock(&operationMutex);
+    pthread_mutex_lock(&pausePlayStopMutex);
 
     PlayerState.fileLoading = true;
     free(PlayerState.fileName);
@@ -74,7 +78,7 @@ void openFile(char* fileNameToOpen) {
     PlayerState.fileName = strdup(fileNameToOpen);
 
     /** UNLOCK **/
-    pthread_mutex_unlock(&operationMutex);
+    pthread_mutex_unlock(&pausePlayStopMutex);
 
     /* Open file. Because this is just a example we asume
         What you are doing and give file first argument */
@@ -90,10 +94,10 @@ void openFile(char* fileNameToOpen) {
 
     preparePortAudio();
 
-    pthread_mutex_lock(&operationMutex);
+    pthread_mutex_lock(&pausePlayStopMutex);
     PlayerState.fileLoaded = true;
     PlayerState.fileLoading = false;
-    pthread_mutex_unlock(&operationMutex);
+    pthread_mutex_unlock(&pausePlayStopMutex);
 
     puts(("Opened file %s.\n", fileNameToOpen));
     printf("\n\nfileByteRate 0x%08X \n", sfinfo.format | SF_FORMAT_WAV);
@@ -145,11 +149,14 @@ static int streamCallback(const void *inputBuffer,
 
     short state = getPlayerStateUsingMutex();
 
+
     float *out = (float*)outputBuffer;
     long readcount = 0;
 
-    // TODO: Hard coding 4 is BAD! Need to figure out how to programmatically get
+    printf("outputBufferDacTime == %lf\n", Pa_GetStreamTime(stream) - timeInfo->outputBufferDacTime);
+    fflush(stdout);
 
+    // TODO: Hard coding 4 is BAD! Need to figure out how to programmatically get bytes per frame
     memset(out, 0x00, framesPerBuffer * sfinfo.channels * 4);
 
     // Allow the buffer to stay silent when paused
@@ -161,7 +168,7 @@ static int streamCallback(const void *inputBuffer,
     /* Read with libsndfile */
     readcount = sf_read_float(infile, out, framesPerBuffer * 2);
 
-    printf("read %lu bytes from %s\n", readcount, PlayerState.fileName);
+    //printf("read %lu bytes from %s\n", readcount, PlayerState.fileName);
 
     /* File end if we read -1 */
     if (readcount <= 0) {
@@ -197,10 +204,6 @@ void * audioPlayback(void *ptr) {
         puts("Could not open stream, executing cleanup()");
         goto exit;
     }
-    else {
-        puts("Stream open...");
-        fflush(stdout);
-    }
 
     retval = Pa_StartStream(stream);
     if (retval != paNoError) {
@@ -216,6 +219,27 @@ exit:
     /* clean up and disconnect */
     cleanup();
     return NULL;
+}
+
+short getPlaybackStatus() {
+    pthread_mutex_lock(&pausePlayStopMutex);
+    short state = PlayerState.state;
+    pthread_mutex_unlock(&pausePlayStopMutex);
+
+    return state;
+}
+
+double getCurrentTimeStamp() {
+    if (Pa_IsStreamActive(stream) == 1) {
+        double ts = (double) Pa_GetStreamTime(stream);
+        printf("ts == %lf\n", ts);
+        currentTimeStamp = ts;
+        return ts;
+    }
+    else {
+        return currentTimeStamp;
+    }
+
 }
 
 void preparePortAudio() {
@@ -248,11 +272,13 @@ void preparePortAudio() {
             goto exit;
         }
 
-        pthread_mutex_lock(&operationMutex);
+        pthread_mutex_lock(&pausePlayStopMutex);
         PlayerState.portAudioInitialized = true;
-        pthread_mutex_unlock(&operationMutex);
+        pthread_mutex_unlock(&pausePlayStopMutex);
 
         outputParameters.device = Pa_GetDefaultOutputDevice(); /* default output device */
+        const PaDeviceInfo *playbackDeviceInfo;
+        playbackDeviceInfo = Pa_GetDeviceInfo( outputParameters.device );
 
         if (outputParameters.device == paNoDevice) {
             fprintf(stderr, "Error: No default output device.\n");
