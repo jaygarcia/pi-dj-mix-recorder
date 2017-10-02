@@ -1,4 +1,7 @@
 app/cmake-build-debug/
+app/CMakeFiles/
 app/.idea/
+app/CMakeCache.txt
+app/cmake_install.cmake
 
 tmp/
