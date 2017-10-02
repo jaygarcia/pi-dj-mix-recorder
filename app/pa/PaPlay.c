@@ -116,6 +116,7 @@ void playTrack() {
     if (state == PAUSED) {
         puts("Resuming");
         setPlayerStateUsingMutex(PLAYING);
+        audioPlayback(NULL);
         return;
     }
 
@@ -153,7 +154,7 @@ static int streamCallback(const void *inputBuffer,
 
     // Allow the buffer to stay silent when paused
     if (state == PAUSED) {
-        printf("Paused\n");
+        printf("state == Paused\n");
         return paContinue;
     }
 
@@ -278,13 +279,15 @@ exit:
 
 
 
-void stopAudio() {
-    setPlayerStateUsingMutex(STOPPED);
+void pauseAudio() {
+    setPlayerStateUsingMutex(PAUSED);
     Pa_StopStream(stream);
 }
 
-void pauseAudio() {
-    setPlayerStateUsingMutex(PAUSED);
+void stopAudio() {
+    setPlayerStateUsingMutex(STOPPED);
+    Pa_StopStream(stream);
+    sf_seek(infile, 0,0);
 }
 
 
