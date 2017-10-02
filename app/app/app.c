@@ -3,7 +3,7 @@
 #include "../pa/PaPlay.h"
 #include <sys/time.h>
 
-#ifdef RPI
+#ifdef __arm__
 char *TEST_SONG_TO_PLAY = "/home/pi/projects/djsr/song.wav";
 #else
 char *TEST_SONG_TO_PLAY = "/home/jgarcia/projects/djsr/song.wav";

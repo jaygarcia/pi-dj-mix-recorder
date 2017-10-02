@@ -28,11 +28,11 @@
           <file leaf-file-name="app.c" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/app.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="630">
-                  <caret line="34" column="14" lean-forward="false" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
+                <state relative-caret-position="165">
+                  <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
                   <folding>
                     <element signature="e#0#16#0" expanded="true" />
-                    <element signature="e#78#138#0" expanded="true" />
+                    <element signature="e#82#142#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -55,8 +55,8 @@
           <file leaf-file-name="PaPlay.c" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pa/PaPlay.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1359">
-                  <caret line="304" column="0" lean-forward="true" selection-start-line="304" selection-start-column="0" selection-end-line="304" selection-end-column="0" />
+                <state relative-caret-position="738">
+                  <caret line="244" column="20" lean-forward="true" selection-start-line="244" selection-start-column="20" selection-end-line="244" selection-end-column="20" />
                   <folding>
                     <element signature="e#151#170#0" expanded="true" />
                     <element signature="e#7657#7743#0" expanded="false" />
@@ -128,8 +128,8 @@
         <option value="$PROJECT_DIR$/APlay/APlay.c" />
         <option value="$PROJECT_DIR$/app/app.h" />
         <option value="$PROJECT_DIR$/pa/PaPlay.h" />
-        <option value="$PROJECT_DIR$/app/app.c" />
         <option value="$PROJECT_DIR$/pa/PaPlay.c" />
+        <option value="$PROJECT_DIR$/app/app.c" />
       </list>
     </option>
   </component>
@@ -289,12 +289,12 @@
       <workItem from="1506952197562" duration="160000" />
       <workItem from="1506952406152" duration="131000" />
       <workItem from="1506952837563" duration="3582000" />
-      <workItem from="1506956629233" duration="2569000" />
+      <workItem from="1506956629233" duration="2990000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66542000" />
+    <option name="totallyTimeSpent" value="66963000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -307,6 +307,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="337" width="4350" height="2564" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07726632" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -314,11 +315,11 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31405896" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21413091" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21413091" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2123623" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24924144" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24924144" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -339,13 +340,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/pa/PaPlay.c</url>
-          <line>248</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="22" />
     </breakpoint-manager>
     <watches-manager />
@@ -378,7 +372,7 @@
           <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <element signature="e#78#138#0" expanded="true" />
+            <element signature="e#82#142#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -396,7 +390,7 @@
           <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <element signature="e#78#138#0" expanded="true" />
+            <element signature="e#82#142#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -414,7 +408,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <element signature="e#78#138#0" expanded="true" />
+            <element signature="e#82#142#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -432,7 +426,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <element signature="e#78#138#0" expanded="true" />
+            <element signature="e#82#142#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -450,7 +444,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <element signature="e#78#138#0" expanded="true" />
+            <element signature="e#82#142#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -468,7 +462,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <element signature="e#78#138#0" expanded="true" />
+            <element signature="e#82#142#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -694,17 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="34" column="14" lean-forward="false" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-            <element signature="e#78#138#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/include/portaudio.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1083">
@@ -715,12 +698,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pa/PaPlay.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1359">
-          <caret line="304" column="0" lean-forward="true" selection-start-line="304" selection-start-column="0" selection-end-line="304" selection-end-column="0" />
+        <state relative-caret-position="738">
+          <caret line="244" column="20" lean-forward="true" selection-start-line="244" selection-start-column="20" selection-end-line="244" selection-end-column="20" />
           <folding>
             <element signature="e#151#170#0" expanded="true" />
             <element signature="e#7657#7743#0" expanded="false" />
             <element signature="e#7745#7857#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#82#142#0" expanded="true" />
           </folding>
         </state>
       </provider>
