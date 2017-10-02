@@ -1,4 +1,4 @@
-dj_mix_recorder_clion/cmake-build-debug/
-dj_mix_recorder_clion/.idea/
+app/cmake-build-debug/
+app/.idea/
 
 tmp/
