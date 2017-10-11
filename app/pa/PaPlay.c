@@ -31,6 +31,10 @@ pthread_mutex_t pausePlayStopMutex,
 
 double currentTimeStamp;
 
+
+unsigned long totalBytesRead,
+              totalFramesRead;
+
 int fileByteRate;
 /* To be locked via mutex */
 
@@ -100,7 +104,8 @@ void openFile(char* fileNameToOpen) {
     pthread_mutex_unlock(&pausePlayStopMutex);
 
     puts(("Opened file %s.\n", fileNameToOpen));
-    printf("\n\nfileByteRate 0x%08X \n", sfinfo.format | SF_FORMAT_WAV);
+    printf("\n\nfileByteRate 0x%08X \n", sfinfo.format -  SF_FORMAT_WAV);
+
 
 }
 
@@ -153,8 +158,6 @@ static int streamCallback(const void *inputBuffer,
     float *out = (float*)outputBuffer;
     long readcount = 0;
 
-    printf("outputBufferDacTime == %lf\n", Pa_GetStreamTime(stream) - timeInfo->outputBufferDacTime);
-    fflush(stdout);
 
     // TODO: Hard coding 4 is BAD! Need to figure out how to programmatically get bytes per frame
     memset(out, 0x00, framesPerBuffer * sfinfo.channels * 4);
@@ -167,6 +170,13 @@ static int streamCallback(const void *inputBuffer,
 
     /* Read with libsndfile */
     readcount = sf_read_float(infile, out, framesPerBuffer * 2);
+
+    pthread_mutex_lock(&timestampMutex);
+
+    totalFramesRead += framesPerBuffer;
+
+    pthread_mutex_unlock(&timestampMutex);
+
 
     //printf("read %lu bytes from %s\n", readcount, PlayerState.fileName);
 
@@ -232,7 +242,9 @@ short getPlaybackStatus() {
 double getCurrentTimeStamp() {
     if (Pa_IsStreamActive(stream) == 1) {
         double ts = (double) Pa_GetStreamTime(stream);
-        printf("ts == %lf\n", ts);
+        printf("Frames read %lu out of %lu total\n", totalFramesRead, sfinfo.frames);
+        fflush(stdout);
+
         currentTimeStamp = ts;
         return ts;
     }
@@ -247,14 +259,17 @@ int findUsbAudio() {
         i = 0;
 
     const PaDeviceInfo *deviceInfo;
+    char *queryStr = "USB Audio CODEC";
 
     for (; i < numDevices; i++) {
         deviceInfo = Pa_GetDeviceInfo(i);
-        printf("Device %i -> %s\n", i, deviceInfo->name);
 
+        if (strstr(deviceInfo->name,  "USB Audio CODEC") != NULL) {
+            return i;
+        }
     }
 
-    return 0;
+    return -1;
 }
 
 void preparePortAudio() {
@@ -262,6 +277,8 @@ void preparePortAudio() {
     PaError retval;
     struct sigaction sa;
 
+    totalBytesRead = 0;
+    totalFramesRead = 0;
 
     sa.sa_flags = SA_SIGINFO;
     sigemptyset(&sa.sa_mask);
@@ -293,8 +310,8 @@ void preparePortAudio() {
         pthread_mutex_unlock(&pausePlayStopMutex);
 
         outputParameters.device = Pa_GetDefaultOutputDevice(); /* default output device */
-        const PaDeviceInfo *playbackDeviceInfo;
-        playbackDeviceInfo = Pa_GetDeviceInfo( outputParameters.device );
+//        const PaDeviceInfo *playbackDeviceInfo;
+//        playbackDeviceInfo = Pa_GetDeviceInfo(outputParameters.device);
 
         if (outputParameters.device == paNoDevice) {
             fprintf(stderr, "Error: No default output device.\n");
@@ -302,6 +319,11 @@ void preparePortAudio() {
         }
 
         int usbAudioDeviceIndex = findUsbAudio();
+
+        if (usbAudioDeviceIndex == -1) {
+            fprintf(stderr, "ERROR :: Could not find USB audio device. Aborting.\n");
+            goto exit;
+        }
 
 
         outputParameters.channelCount = 2;       /* stereo output */

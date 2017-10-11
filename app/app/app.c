@@ -21,10 +21,10 @@ void * displayTimestampThreadFn(gpointer data) {
     while(status == 1)  {
 
         timestamp = getCurrentTimeStamp();
-        printf("TIMESTAMP :: %lf\n", timestamp);
-        fflush(stdout);
+//        printf("TIMESTAMP :: %lf\n", timestamp);
+//        fflush(stdout);
 
-        sleep(1);
+        usleep(500000);
         status = getPlaybackStatus();
 
     }
