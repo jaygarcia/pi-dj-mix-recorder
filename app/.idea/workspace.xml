@@ -28,8 +28,8 @@
           <file leaf-file-name="app.c" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/app.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="476">
-                  <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+                <state relative-caret-position="544">
+                  <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
                   <folding>
                     <element signature="e#0#16#0" expanded="true" />
                     <element signature="e#82#142#0" expanded="true" />
@@ -55,15 +55,14 @@
           <file leaf-file-name="PaPlay.c" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pa/PaPlay.c">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1700">
-                  <caret line="265" column="0" lean-forward="true" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
+                <state relative-caret-position="255">
+                  <caret line="145" column="5" lean-forward="true" selection-start-line="145" selection-start-column="5" selection-end-line="145" selection-end-column="5" />
                   <folding>
                     <element signature="e#151#170#0" expanded="true" />
-                    <element signature="e#980#1157#0" expanded="false" />
-                    <element signature="e#1344#2330#0" expanded="false" />
-                    <element signature="e#2332#3048#0" expanded="false" />
-                    <element signature="e#8099#8185#0" expanded="false" />
-                    <element signature="e#8187#8299#0" expanded="false" />
+                    <element signature="e#1039#1216#0" expanded="false" />
+                    <element signature="e#3434#4150#0" expanded="false" />
+                    <element signature="e#9201#9287#0" expanded="false" />
+                    <element signature="e#9289#9401#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -75,13 +74,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>end of Audio</find>
-      <find>bytes</find>
-      <find>sfinfo</find>
-      <find>pause</find>
-      <find>bytewidth</find>
-      <find>sf</find>
-      <find>fileByteRate =</find>
       <find>paused</find>
       <find>stop</find>
       <find>audioPlaybackaudioPlayback</find>
@@ -105,6 +97,13 @@
       <find>findUsbAudio</find>
       <find>SIGSEGV</find>
       <find>-1</find>
+      <find>file byte</find>
+      <find>fileByterate</find>
+      <find>sfinfo</find>
+      <find>format</find>
+      <find>SF_INFO</find>
+      <find>fstat</find>
+      <find>SF_FORMAT_SUBMASK</find>
     </findStrings>
     <replaceStrings>
       <replace>if (</replace>
@@ -257,12 +256,13 @@
       <workItem from="1506952837563" duration="3582000" />
       <workItem from="1506956629233" duration="2990000" />
       <workItem from="1507727295587" duration="2131000" />
-      <workItem from="1507729627818" duration="1407000" />
+      <workItem from="1507729627818" duration="2732000" />
+      <workItem from="1507743225032" duration="4720000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70501000" />
+    <option name="totallyTimeSpent" value="76546000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -282,12 +282,12 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3126661" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31405896" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21346325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21395823" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21599592" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32993197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24889283" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -308,36 +308,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="25" />
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/APlay/APlay.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11550">
-          <caret line="350" column="0" lean-forward="true" selection-start-line="350" selection-start-column="0" selection-end-line="350" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-            <element signature="e#82#142#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="693">
@@ -627,13 +602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/sndfile.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="339" column="15" lean-forward="false" selection-start-line="339" selection-start-column="8" selection-end-line="339" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/stdio.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -658,10 +626,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/include/string.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="336" column="13" lean-forward="false" selection-start-line="336" selection-start-column="13" selection-end-line="336" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/x86_64-linux-gnu/bits/typesizes.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/x86_64-linux-gnu/bits/types.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="130" column="22" lean-forward="false" selection-start-line="130" selection-start-column="22" selection-end-line="130" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/x86_64-linux-gnu/bits/stat.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/app.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="31" column="34" lean-forward="true" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+        <state relative-caret-position="544">
+          <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
             <element signature="e#82#142#0" expanded="true" />
@@ -669,27 +668,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/string.h">
+    <entry file="file:///usr/include/sndfile.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="336" column="13" lean-forward="false" selection-start-line="336" selection-start-column="13" selection-end-line="336" selection-end-column="13" />
-          <folding>
-            <element signature="e#6616#7412#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="276">
+          <caret line="120" column="4" lean-forward="false" selection-start-line="120" selection-start-column="4" selection-end-line="120" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pa/PaPlay.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="265" column="0" lean-forward="true" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="145" column="5" lean-forward="true" selection-start-line="145" selection-start-column="5" selection-end-line="145" selection-end-column="5" />
           <folding>
             <element signature="e#151#170#0" expanded="true" />
-            <element signature="e#980#1157#0" expanded="false" />
-            <element signature="e#1344#2330#0" expanded="false" />
-            <element signature="e#2332#3048#0" expanded="false" />
-            <element signature="e#8099#8185#0" expanded="false" />
-            <element signature="e#8187#8299#0" expanded="false" />
+            <element signature="e#1039#1216#0" expanded="false" />
+            <element signature="e#3434#4150#0" expanded="false" />
+            <element signature="e#9201#9287#0" expanded="false" />
+            <element signature="e#9289#9401#0" expanded="false" />
           </folding>
         </state>
       </provider>

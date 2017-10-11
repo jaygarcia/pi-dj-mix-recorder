@@ -21,9 +21,11 @@
 #include <pa_linux_alsa.h>
 #include <unistd.h>
 #include <sys/time.h>
+#include <sys/stat.h>
 
 SNDFILE *infile;
 SF_INFO sfinfo ;
+int currentByteRate;
 PaStream *stream;
 PaStreamParameters outputParameters;
 pthread_mutex_t pausePlayStopMutex,
@@ -31,6 +33,7 @@ pthread_mutex_t pausePlayStopMutex,
 
 double currentTimeStamp;
 
+off_t fileSize;
 
 unsigned long totalBytesRead,
               totalFramesRead;
@@ -71,6 +74,16 @@ short getPlayerStateUsingMutex() {
     return state;
 }
 
+
+unsigned long fsize(char* file) {
+    FILE * f = fopen(file, "r");
+    fseek(f, 0, SEEK_END);
+    unsigned long len = (unsigned long)ftell(f);
+    fclose(f);
+    return len;
+}
+
+
 void openFile(char* fileNameToOpen) {
 
     /** LOCK **/
@@ -80,6 +93,18 @@ void openFile(char* fileNameToOpen) {
     free(PlayerState.fileName);
     realloc(PlayerState.fileName, sizeof(char) * strlen(fileNameToOpen));
     PlayerState.fileName = strdup(fileNameToOpen);
+
+
+    struct stat fileStat;
+
+    if (stat(fileNameToOpen, &fileStat) != 0 || (!S_ISREG(fileStat.st_mode))) {
+        fprintf(stderr, "ERROR :: Could no open file %s\n", fileNameToOpen);
+        pthread_mutex_unlock(&pausePlayStopMutex);
+
+        return;
+    }
+
+    fileSize = fileStat.st_size;
 
     /** UNLOCK **/
     pthread_mutex_unlock(&pausePlayStopMutex);
@@ -93,9 +118,6 @@ void openFile(char* fileNameToOpen) {
     }
 
 
-
-
-
     preparePortAudio();
 
     pthread_mutex_lock(&pausePlayStopMutex);
@@ -103,9 +125,26 @@ void openFile(char* fileNameToOpen) {
     PlayerState.fileLoading = false;
     pthread_mutex_unlock(&pausePlayStopMutex);
 
-    puts(("Opened file %s.\n", fileNameToOpen));
-    printf("\n\nfileByteRate 0x%08X \n", sfinfo.format -  SF_FORMAT_WAV);
+    currentByteRate = sf_current_byterate(infile);
 
+    puts(("Opened file %s.", fileNameToOpen));
+    printf("\tByte Rate %i \n", currentByteRate);
+    printf("\tNum frames: %lu\n", sfinfo.frames);
+    printf("\tChannels : %i\n", sfinfo.channels);
+    printf("\tSample Rate: %i\n", sfinfo.samplerate);
+
+    // Do we want to support more than one format?
+    printf("\tFormat: 0x%x ", SF_FORMAT_TYPEMASK & sfinfo.format);
+    fflush(stdout);
+
+    if ((SF_FORMAT_TYPEMASK & sfinfo.format) == SF_FORMAT_WAV) {
+        printf("Microsoft WAV format (little endian). ");
+    }
+
+    if ((SF_FORMAT_SUBMASK & sfinfo.format) == SF_FORMAT_PCM_16) {
+        printf("Signed 16 bit");
+    }
+    printf("\n");
 
 }
 

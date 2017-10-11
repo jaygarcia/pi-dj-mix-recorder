@@ -65,6 +65,8 @@ unistd.h
 -
 sys/time.h
 -
+sys/stat.h
+-
 
 /home/jgarcia/projects/djsr/app/pa/PaPlay.h
 
